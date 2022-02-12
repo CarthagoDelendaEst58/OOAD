@@ -2,6 +2,7 @@ package Main;
 
 import Items.*;
 
+import java.awt.print.Paper;
 import java.util.*;
 
 public class Store {
@@ -39,7 +40,8 @@ public class Store {
         String condition = conditions[rand.nextInt(5)];
         String name = "temp";
 
-        return new Item(day, name, purchasePrice, purchasePrice * 2, true, condition);
+        Item myPaperScore = new PaperScoreItem("Nirvana Album", 25.00,50.00, true, 0, "Good", "Nirvana", "Nevermind");
+        return myPaperScore;
     }
 
     public void addItemToInventory(Item item) {
