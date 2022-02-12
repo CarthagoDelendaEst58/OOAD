@@ -20,4 +20,56 @@ public abstract class Item {
         this.condition = condition;
     }
 
+    public String getName(){
+        return name;
+    }
+    public double getPurchasePrice(){
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(double newPurchasePrice){
+        purchasePrice = newPurchasePrice;
+    }
+
+    public double getListPrice(){
+        return listPrice;
+    }
+    public void setListPrice(double newListPrice){
+        listPrice = newListPrice;
+    }
+    public boolean getNewOrUsed(){
+        return newOrUsed;
+    }
+    public int getDayArrived(){
+        return dayArrived;
+    }
+    public void setDayArrived(int newDayArrived){
+        dayArrived = newDayArrived;
+    }
+
+    public String getCondition(){
+        return condition;
+    }
+
+    public void setCondition(String newCondition){
+        condition = newCondition;
+    }
+
+    public double getSalePrice(){
+        return salePrice;
+    }
+
+    public void setSalePrice(double newSalePrice){
+        salePrice = newSalePrice;
+    }
+
+    public int getDaySold(){
+        return daySold;
+    }
+
+    public void setDaySold(int newDaySold){
+        daySold = newDaySold;
+    }
+
+
 }

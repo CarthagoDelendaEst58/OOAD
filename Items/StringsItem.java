@@ -8,3 +8,4 @@ public class StringsItem extends Accessories {
         this.type = type;
     }
 }
+    
