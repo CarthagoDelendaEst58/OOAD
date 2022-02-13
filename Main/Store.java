@@ -41,6 +41,10 @@ public class Store {
         return inDelivery;
     }
 
+    public ArrayList<Item> getSoldItems() {
+        return soldItems;
+    }
+
     public int getDay() {
         return day;
     }

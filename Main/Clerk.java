@@ -50,15 +50,18 @@ public class Clerk extends Staff {
         }
     }
 
+    // Occurs when the Register has less than $75
+    // Adds $1000 to the register
     private void goToBank() {
         getRegister().alterBalance(1000);
         getStore().moneyWithdrawn(1000);
         System.out.println(String.format("%s has added $1000 to the register", getName()));
     }
 
-
+    // Totals the purchase price of all items in the Store's inventory
+    // Checks if items need to be ordered
     private void doInventory() {
-        HashMap<String, Integer> stock = new HashMap<String, Integer>();
+        HashMap<String, Integer> stock = new HashMap<String, Integer>(); // Hashmap to determine counts of Item types in stock
         for (int i = 0; i < getStore().item_types.length; i++) {
             stock.put(getStore().item_types[i], 0);
         }
@@ -72,7 +75,7 @@ public class Clerk extends Staff {
         System.out.println(String.format("%s has determined that the total value of items in the store is $%f", getName(), total));
 
         for (Map.Entry pair : stock.entrySet()) {
-            if ((int)pair.getValue() <= 0) {
+            if ((int)pair.getValue() <= 0) { // No items of this type in stock
                 boolean item_inDelivery = false;
                 for (Item item : getStore().getItemsInDelivery()) {
                     if (item.getClassName().equals((String)pair.getKey())) {
