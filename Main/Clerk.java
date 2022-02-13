@@ -3,6 +3,7 @@ package Main;
 import java.util.*;
 import Items.*;
 
+// Clerk inherits Staff, which provides it with the generalized attributes and methods
 public class Clerk extends Staff {
     private double damageChance;
 
@@ -10,11 +11,11 @@ public class Clerk extends Staff {
         super(_name, _register, _store);
         this.damageChance = damageChance;
     }
-//
-//    Clerk(String _name, double damageChance) {
-//        super(_name);
-//        this.damageChance = damageChance;
-//    }
+
+    // Executes the sequence of actions to be performed within one day
+    //
+    // This is the only public method in Clerk, which is a good example of
+    // abstraction as outside objects are only able to initiate this sequence
     public void work(int day) {
         arriveAtStore(day);
         checkRegister();
@@ -24,10 +25,12 @@ public class Clerk extends Staff {
         leaveTheStore();
     }
 
+    // The Clerk arrives at the store on the given day, announcing their arrival
+    // The Clerk also checks the Store's inDelivery ArrayList for any newly delivered items
     private void arriveAtStore(int day) {
         System.out.println(String.format("%s has arrived at the store on day %d", getName(), day));
         ArrayList<Item> inDelivery = getStore().getItemsInDelivery();
-        for (int i = inDelivery.size()-1; i >= 0; i--) {
+        for (int i = inDelivery.size()-1; i >= 0; i--) { // looping from the back to avoid issues when removing from the ArrayList
             if (inDelivery.get(i).getDayArrived() == day) {
                 System.out.println(String.format("%s has discovered that a %s has arrived at the store", getName(), inDelivery.get(i).getClassName()));
                 getStore().addItemToInventory(inDelivery.get(i));
@@ -36,6 +39,7 @@ public class Clerk extends Staff {
         }
     }
 
+    // The Clerk checks the Register, announcing the balance
     private void checkRegister() {
         double register_balance = getRegister().getBalance();
         System.out.println(String.format("%s has counted a total of $%f in the register", getName(), register_balance));
