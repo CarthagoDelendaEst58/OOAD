@@ -71,6 +71,8 @@ public class Store {
         inventory.add(item);
     }
 
+    public void addItemToInDelivery(Item item) { inDelivery.add(item); }
+
     public void soldItem(Item item) { soldItems.add(item); }
 
     public void addClerk(String clerk_name, double damageChance) {

@@ -71,12 +71,16 @@ public class Clerk extends Staff {
         }
     }
 
-//    private void purchaseItem() {
-//        Item newItem = getStore().generateItem();
-//    }
-
     private void placeAnOrder(String item_type) {
-
+        ItemFactory factory = new ItemFactory();
+        Random rand = new Random();
+        int days_to_delivery = rand.nextInt(3)+1;
+        for (int i = 0; i < 3; i++) {
+            Item newItem = factory.generateItem(item_type);
+            newItem.setDayArrived(getStore().getDay()+days_to_delivery);
+            getStore().addItemToInDelivery(newItem);
+            getRegister().alterBalance(-1*newItem.getPurchasePrice());
+        }
     }
 
     private void sellItem(Customer customer, Item item, double price, int item_index) {
