@@ -25,20 +25,8 @@ public class FNMS {
 
         for (int i = 0; i < item_types.length;i++ ){
             for (int j = 0; j < 3; j++){
-                Random rand = new Random();
-                double itemNumber = rand.nextDouble()*200+1;
-
-                String itemName = "Item #" +(int)itemNumber;
-                double itemPurchasePrice = rand.nextDouble() * 49 + 1;
-                double itemListPrice = itemPurchasePrice*2;
-                boolean newOrUsed = true;
-                int dayArrived = 0;
-                String condition = "Excellent";
-
-                Item newItem = itemFactory.createItem(item_types[i], itemName, itemPurchasePrice, itemListPrice, newOrUsed, dayArrived, condition,
-                        "Nirvana", "Nevermind", true, "Wood", "B", 5, 10,
-                        100.00, 10.00, "Nylon");
-                FNMS.addItemToInventory(newItem);
+                Item tempItem = itemFactory.generateItem(item_types[i]);
+                FNMS.addItemToInventory(tempItem);
             }
         }
 

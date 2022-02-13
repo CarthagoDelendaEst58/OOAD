@@ -1,8 +1,17 @@
 package Items;
 
 
+import java.util.Random;
 
 public class ItemFactory {
+
+    public static String[] item_types = {"CDPlayerItem", "MP3PlayerItem", "RecordPlayerItem", "VinylItem", "PaperScoreItem",
+            "CDItem", "HatItem", "BandanaItem", "ShirtItem", "StringsItem", "CablesItem", "PracticeAmpItem",
+            "FluteItem", "HarmonicaItem", "MandolinItem", "GuitarItem", "BassItem"};
+    public static String[] conditions = {"poor", "fair", "good", "very good", "excellent"};
+
+
+
     public Item createItem(String type, String name, double purchasePrice, double listPrice, boolean newOrUsed, int dayArrived, String condition,
                            String band, String album, boolean isElectric, String fluteType, String harmonicaKey, int hatSize, int shirtSize,
                            double ampWattage, double cableLength, String stringsType){
@@ -79,5 +88,30 @@ public class ItemFactory {
 
 
         return null;
+    }
+
+    public Item generateItem(String type){
+        Random rand = new Random();
+        double itemNumber = rand.nextDouble()*200+1;
+
+        String itemName = "Item #" +(int)itemNumber;
+        double itemPurchasePrice = rand.nextDouble() * 49 + 1;
+        double itemListPrice = itemPurchasePrice*2;
+        boolean newOrUsed;
+        if (Math.random() < 0.5){
+            newOrUsed = true;
+        }
+        else {
+            newOrUsed = false;
+        }
+
+        int dayArrived = 0;
+        String condition =  conditions[rand.nextInt(5)];
+
+        Item newItem = createItem(item_types[rand.nextInt(item_types.length)], itemName, itemPurchasePrice, itemListPrice, newOrUsed, dayArrived, condition,
+                "Nirvana", "Nevermind", true, "Wood", "B", 5, 10,
+                100.00, 10.00, "Nylon");
+        return newItem;
+
     }
 }
