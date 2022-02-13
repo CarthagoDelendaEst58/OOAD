@@ -1,5 +1,7 @@
 package Items;
 
+
+
 public class ItemFactory {
     public Item createItem(String type, String name, double purchasePrice, double listPrice, boolean newOrUsed, int dayArrived, String condition,
                            String band, String album, boolean isElectric, String fluteType, String harmonicaKey, int hatSize, int shirtSize,
@@ -74,6 +76,7 @@ public class ItemFactory {
         if (("VinylItem").equals(type)){
             return new VinylItem(name, purchasePrice, listPrice, newOrUsed, dayArrived, condition, band, album);
         }
+
 
         return null;
     }
