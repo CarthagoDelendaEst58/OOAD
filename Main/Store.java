@@ -23,9 +23,7 @@ public class Store {
 
         inDelivery = new ArrayList<Item>();
         inventory = new ArrayList<Item>();
-        for (int i = 0; i < 3; i++) {
-            inventory.add(generateItem());
-        }
+        //functionality for adding preset inventory will be in initalize for main
     }
 
     public ArrayList<Clerk> getStaff() {

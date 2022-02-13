@@ -1,8 +1,14 @@
 package Main;
 
-public class Simulate {
+public class Main {
 
-    public static void initializeStore() {
+    public static void initialize() {
+
+        Store store = new Store();
+        store.addClerk("Velma", 5);
+        store.addClerk("Shaggy", 20);
+
+        store.getStaff().get(1).work(1);
         //create starting set of inventory
         //  3 of each lowest subclass of merch, any name, any purchase price, list price = 2x purchase price
         //  dayArrived = 0 for each item
@@ -10,11 +16,11 @@ public class Simulate {
 
     }
 
-    public static void main(String[] args) {
-        Store store = new Store();
-        store.addClerk("Velma", 5);
-        store.addClerk("Shaggy", 20);
+    public static void simulate(){
 
-        store.getStaff().get(1).work(1);
+    }
+
+    public static void main(String[] args) {
+
     }
 }
