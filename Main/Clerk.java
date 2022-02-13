@@ -28,7 +28,8 @@ public class Clerk extends Staff {
     // The Clerk arrives at the store on the given day, announcing their arrival
     // The Clerk also checks the Store's inDelivery ArrayList for any newly delivered items
     private void arriveAtStore(int day) {
-        System.out.println(String.format("%s has arrived at the store on day %d", getName(), day));
+        getStore().incrementDay();
+        System.out.println(String.format("%s has arrived at the store on day %d", getName(), getStore().getDay()));
         ArrayList<Item> inDelivery = getStore().getItemsInDelivery();
         for (int i = inDelivery.size()-1; i >= 0; i--) { // looping from the back to avoid issues when removing from the ArrayList
             if (inDelivery.get(i).getDayArrived() == day) {
@@ -82,13 +83,15 @@ public class Clerk extends Staff {
                         item_inDelivery = true;
                     }
                 }
-                if (!item_inDelivery) {
+                if (!item_inDelivery) { // Only order new items if they haven't been ordered yet
                     placeAnOrder((String) pair.getKey());
                 }
             }
         }
     }
 
+    // Orders 3 new items of the given item type
+    // Adds Items to the delivery list and removes money from the Register
     private void placeAnOrder(String item_type) {
         ItemFactory factory = new ItemFactory();
         Random rand = new Random();
@@ -104,6 +107,7 @@ public class Clerk extends Staff {
         System.out.println(String.format("%s has placed an order for 3 %s", getName(), item_type));
     }
 
+    // Executes the sale of the specified Item to the Customer
     private void sellItem(Customer customer, Item item, double price, int item_index) {
         item.setDaySold(getStore().getDay());
         item.setSalePrice(price);
@@ -115,6 +119,7 @@ public class Clerk extends Staff {
         System.out.println(String.format("%s has sold a %s to %s for $%f", getName(), item.getClassName(), customer.getName(), price));
     }
 
+    // Executes the purchase of an Item from the Customer
     private void buyItem(Customer customer, Item item, double price) {
         item.setPurchasePrice(price);
         getStore().addItemToInventory(item);
@@ -124,17 +129,18 @@ public class Clerk extends Staff {
         System.out.println(String.format("%s has bought a %s condition %s %s from %s for $%f", getName(), item.getCondition(), newOrUsed, item.getClassName(), customer.getName(), price));
     }
 
+    // The Clerk deals with the two types of customers
     private void openTheStore() {
         ArrayList<Customer> customers = new ArrayList<Customer>();
         Random rand = new Random();
         String[] names = Customer.getNames();
         String[] item_types = Store.item_types;
         ArrayList<Item> items = getStore().getInventory();
-        for (int i = 0; i < rand.nextInt(7)+4; i++) {
+        for (int i = 0; i < rand.nextInt(7)+4; i++) { // generate buying customers
             Customer new_customer = new Customer(names[rand.nextInt(names.length)], false, item_types[rand.nextInt(item_types.length)]);
             customers.add(new_customer);
         }
-        for (int i = 0; i < rand.nextInt(4)+1; i++) {
+        for (int i = 0; i < rand.nextInt(4)+1; i++) { // generate selling customers
             Customer new_customer = new Customer(names[rand.nextInt(names.length)], true, item_types[rand.nextInt(item_types.length)]);
             customers.add(new_customer);
         }
@@ -143,22 +149,22 @@ public class Clerk extends Staff {
             Customer curr_customer = customers.get(i);
             if (curr_customer.isSeller()) {
                 ItemFactory factory = new ItemFactory();
-                Item newItem = factory.generateItem(curr_customer.getItemType());
+                Item newItem = factory.generateItem(curr_customer.getItemType()); // generate item being offered
 
                 double price = 0;
                 for (int j = 0; j < Store.conditions.length; j++) {
-                    if (newItem.getCondition().equals(Store.conditions[j])) {
+                    if (newItem.getCondition().equals(Store.conditions[j])) { // determine base price dependant on item condition
                         price = (j+1) * 10;
                     }
                 }
-                if (!newItem.getNewOrUsed()) {
+                if (!newItem.getNewOrUsed()) { // halve price for used items
                     price = price/2;
                 }
 
-                if (rand.nextInt(100) < 50) {
+                if (rand.nextInt(100) < 50) { // Item bought at full price
                     buyItem(curr_customer, newItem, price);
                 }
-                else if (rand.nextInt(100) < 75) {
+                else if (rand.nextInt(100) < 75) { // Item bought at slight markup
                     buyItem(curr_customer, newItem, price*1.1);
                 }
             }
@@ -166,7 +172,7 @@ public class Clerk extends Staff {
                 boolean item_bought = false;
                 for (int j = items.size()-1; j >= 0; j--) {
                     Item curr_item = items.get(j);
-                    if (curr_item.getClassName().equals(curr_customer.getItemType())) {
+                    if (curr_item.getClassName().equals(curr_customer.getItemType())) { // Customer finds Item of type wanting to buy
                         if (rand.nextInt(100) < 50) {
                             sellItem(curr_customer, curr_item, curr_item.getListPrice(), j);
                             item_bought = true;

@@ -49,6 +49,10 @@ public class Store {
         return day;
     }
 
+    public void incrementDay() {
+        day++;
+    }
+
     public ArrayList<Item> getInventory() { return inventory; }
     public void moneyWithdrawn(double money) { moneyWithdrawnFromBank += money; }
 
