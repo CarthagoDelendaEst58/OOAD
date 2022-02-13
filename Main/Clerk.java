@@ -99,7 +99,7 @@ public class Clerk extends Staff {
         getStore().soldItem(item);
         getRegister().alterBalance(price);
 
-        System.out.println(String.format("%s has sold a %s to %s for $f", getName(), item.getClassName(), customer.getName(), price));
+        System.out.println(String.format("%s has sold a %s to %s for $%f", getName(), item.getClassName(), customer.getName(), price));
     }
 
     private void buyItem(Customer customer, Item item, double price) {
