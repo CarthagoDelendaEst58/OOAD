@@ -184,9 +184,11 @@ public class Clerk extends Staff {
             if (rand.nextInt(100) < damageChance) {
                 int condition_index = getPosOfStr(Store.conditions, inventory.get(i).getCondition());
                 if (condition_index == 0) {
+                    System.out.println(String.format("%s has destroyed a(n) %s", getName(), inventory.get(i).getClassName()));
                     inventory.remove(i);
                 }
                 else if (condition_index > 0) {
+                    System.out.println(String.format("%s has damaged a(n) %s, lowering its condition to %s", getName(), inventory.get(i).getClassName(), Store.conditions[condition_index-1]));
                     inventory.get(i).setCondition(Store.conditions[condition_index-1]);
                     inventory.get(i).setListPrice(inventory.get(i).getListPrice()*0.8);
                 }

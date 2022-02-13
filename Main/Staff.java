@@ -15,7 +15,9 @@ class Staff {
         store = _store;
     }
 
+    public void incrementConsecutiveDays() { consecutiveDays++; }
 
+    public void resetConsecutiveDays() { consecutiveDays = 0; }
 
     public String getName() {
         return name;
