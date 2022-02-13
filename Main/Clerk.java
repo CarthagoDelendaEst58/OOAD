@@ -10,7 +10,11 @@ public class Clerk extends Staff {
         super(_name, _register, _store);
         this.damageChance = damageChance;
     }
-
+//
+//    Clerk(String _name, double damageChance) {
+//        super(_name);
+//        this.damageChance = damageChance;
+//    }
     public void work(int day) {
         arriveAtStore(day);
         checkRegister();
@@ -45,7 +49,10 @@ public class Clerk extends Staff {
         System.out.println(String.format("%s has added $1000 to the register", getName()));
     }
 
+
     private void doInventory() {
+
+
         HashMap<String, Integer> stock = new HashMap<String, Integer>();
         for (int i = 0; i < getStore().item_types.length; i++) {
             stock.put(getStore().item_types[i], 0);

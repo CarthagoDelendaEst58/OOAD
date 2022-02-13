@@ -13,12 +13,15 @@ public class Store {
     private int day;
     public static String[] conditions = {"poor", "fair", "good", "very good", "excellent"};
     public static String[] item_types = {"CDPlayerItem", "MP3PlayerItem", "RecordPlayerItem", "VinylItem", "PaperScoreItem", "CDItem", "HatItem", "BandanaItem", "ShirtItem", "StringsItem", "CablesItem", "PracticeAmpItem", "FluteItem", "HarmonicaItem", "MandolinItem", "GuitarItem", "BassItem"};
+    //arrays for band types, string types, all sub attributes to make items more diverse...
     private double moneyWithdrawnFromBank;
+    private ItemFactory itemFactory = new ItemFactory();
 
     Store() {
         register = new CashRegister();
         staff = new ArrayList<Clerk>();
         day = 0;
+
         moneyWithdrawnFromBank = 0;
 
         inDelivery = new ArrayList<Item>();
@@ -35,15 +38,23 @@ public class Store {
     public ArrayList<Item> getInventory() { return inventory; }
     public void moneyWithdrawn(double money) { moneyWithdrawnFromBank += money; }
 
-    public Item generateItem() {
+    public Item generateItem(String type) {
         Random rand = new Random();
+        double itemNumber = rand.nextDouble() * 200 + 1;
 
+
+        String name = "Item #" + (int)itemNumber;
         double purchasePrice = rand.nextDouble() * 49 + 1;
+        double listPrice = purchasePrice*2;
+        boolean newOrUsed = true;
+        int dayArrived = 0;
         String condition = conditions[rand.nextInt(5)];
-        String name = "temp";
 
-        Item myPaperScore = new PaperScoreItem("Nirvana Album", purchasePrice, purchasePrice*2, true, 0, "good", "Nirvana", "Nevermind");
-        return myPaperScore;
+        Item newItem = itemFactory.createItem(type, name, purchasePrice, listPrice, newOrUsed, dayArrived, condition,
+                "Nirvana", "Nevermind", true, "Wood", "B", 5, 10,
+                100.00, 10.00, "Nylon");
+
+        return newItem;
     }
 
     public void addItemToInventory(Item item) {

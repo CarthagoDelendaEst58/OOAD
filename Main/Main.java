@@ -9,6 +9,7 @@ public class Main {
         store.addClerk("Shaggy", 20);
 
         store.getStaff().get(1).work(1);
+
         //create starting set of inventory
         //  3 of each lowest subclass of merch, any name, any purchase price, list price = 2x purchase price
         //  dayArrived = 0 for each item
