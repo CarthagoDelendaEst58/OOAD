@@ -51,8 +51,6 @@ public class Clerk extends Staff {
 
 
     private void doInventory() {
-
-
         HashMap<String, Integer> stock = new HashMap<String, Integer>();
         for (int i = 0; i < getStore().item_types.length; i++) {
             stock.put(getStore().item_types[i], 0);
@@ -61,7 +59,7 @@ public class Clerk extends Staff {
         double total = 0;
         for (int i = 0; i < inventory.size(); i++) {
             total += inventory.get(i).getPurchasePrice();
-            stock.put(inventory.get(i).getClassName(), stock.get(inventory.get(i).getClassName()+1));
+            stock.put(inventory.get(i).getClassName(), stock.get(inventory.get(i).getClassName())+1);
         }
         System.out.println(String.format("%s has determined that the total value of items in the store is $%f", getName(), total));
 
@@ -77,6 +75,55 @@ public class Clerk extends Staff {
 //    }
 
     private void placeAnOrder(String item_type) {
+
+    }
+
+    private void sellItem(Customer customer, Item item, double price, int item_index) {
+        item.setDaySold(getStore().getDay());
+        item.setSalePrice(price);
+        customer.obtainItem(item);
+        getStore().getInventory().remove(item_index);
+        getStore().soldItem(item);
+        getRegister().alterBalance(price);
+    }
+
+    private void openTheStore() {
+        ArrayList<Customer> customers = new ArrayList<Customer>();
+        Random rand = new Random();
+        String[] names = Customer.getNames();
+        String[] item_types = Store.item_types;
+        ArrayList<Item> items = getStore().getInventory();
+        for (int i = 0; i < rand.nextInt(7)+4; i++) {
+            Customer new_customer = new Customer(names[rand.nextInt(names.length)], false, item_types[rand.nextInt(item_types.length)]);
+            customers.add(new_customer);
+        }
+        for (int i = 0; i < rand.nextInt(4)+1; i++) {
+            Customer new_customer = new Customer(names[rand.nextInt(names.length)], true, item_types[rand.nextInt(item_types.length)]);
+            customers.add(new_customer);
+        }
+
+        for (int i = 0; i < customers.size(); i++) {
+            Customer curr_customer = customers.get(i);
+            if (curr_customer.isSeller()) {
+
+            }
+            else {
+                boolean item_bought = false;
+                for (int j = items.size()-1; j >= 0; j--) {
+                    Item curr_item = items.get(j);
+                    if (curr_item.getClassName().equals(curr_customer.getItemType())) {
+                        if (rand.nextInt(100) < 50) {
+                            sellItem(curr_customer, curr_item, curr_item.getListPrice(), j);
+                            item_bought = true;
+                        }
+
+                    }
+                }
+                if (item_bought == false) {
+                    System.out.println(String.format("%s has left the store without buying anything", curr_customer.getName()));
+                }
+            }
+        }
 
     }
 
@@ -98,7 +145,7 @@ public class Clerk extends Staff {
                 if (condition_index == 0) {
                     inventory.remove(i);
                 }
-                else {
+                else if (condition_index > 0) {
                     inventory.get(i).setCondition(Store.conditions[condition_index-1]);
                     inventory.get(i).setListPrice(inventory.get(i).getListPrice()*0.8);
                 }

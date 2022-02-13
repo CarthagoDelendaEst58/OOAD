@@ -5,12 +5,24 @@ import Items.Item;
 import java.util.ArrayList;
 
 public class Customer {
-    String name;
+    private String name;
+    private boolean seller;
+    private String itemType;
     private ArrayList<Item> itemsOwned;
 
-    public Customer(String name){
+    private static String[] names = {"Liam", "Olivia", "Noah", "Emma", "Oliver",
+                              "Ava", "Elijah", "Charlotte", "William", "Sophia"};
+
+    public Customer(String name, boolean seller, String itemType){
         this.name = name;
+        this.seller = seller;
+        this.itemType = itemType;
     }
+
+    public String getName() { return name; }
+    public boolean isSeller() { return seller; }
+    public String getItemType() { return itemType; }
+    public static String[] getNames() { return names; }
 
     public void obtainItem(Item itemName){
         itemsOwned.add(itemName);

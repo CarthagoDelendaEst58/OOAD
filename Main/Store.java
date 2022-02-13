@@ -8,11 +8,15 @@ import java.util.*;
 public class Store {
     private ArrayList<Item> inventory;
     private ArrayList<Item> inDelivery;
+    private ArrayList<Item> soldItems;
     private ArrayList<Clerk> staff;
     private CashRegister register;
     private int day;
     public static String[] conditions = {"poor", "fair", "good", "very good", "excellent"};
-    public static String[] item_types = {"CDPlayerItem", "MP3PlayerItem", "RecordPlayerItem", "VinylItem", "PaperScoreItem", "CDItem", "HatItem", "BandanaItem", "ShirtItem", "StringsItem", "CablesItem", "PracticeAmpItem", "FluteItem", "HarmonicaItem", "MandolinItem", "GuitarItem", "BassItem"};
+    public static String[] item_types = {"CDPlayerItem", "MP3PlayerItem", "RecordPlayerItem", "VinylItem",
+                                         "PaperScoreItem", "CDItem", "HatItem", "BandanaItem", "ShirtItem",
+                                         "StringsItem", "CablesItem", "PracticeAmpItem", "FluteItem", "HarmonicaItem",
+                                         "MandolinItem", "GuitarItem", "BassItem"};
     //arrays for band types, string types, all sub attributes to make items more diverse...
     private double moneyWithdrawnFromBank;
     private ItemFactory itemFactory = new ItemFactory();
@@ -26,6 +30,7 @@ public class Store {
 
         inDelivery = new ArrayList<Item>();
         inventory = new ArrayList<Item>();
+        soldItems = new ArrayList<Item>();
         //functionality for adding preset inventory will be in initalize for main
     }
 
@@ -35,6 +40,11 @@ public class Store {
     public ArrayList<Item> getItemsInDelivery() {
         return inDelivery;
     }
+
+    public int getDay() {
+        return day;
+    }
+
     public ArrayList<Item> getInventory() { return inventory; }
     public void moneyWithdrawn(double money) { moneyWithdrawnFromBank += money; }
 
@@ -60,6 +70,8 @@ public class Store {
     public void addItemToInventory(Item item) {
         inventory.add(item);
     }
+
+    public void soldItem(Item item) { soldItems.add(item); }
 
     public void addClerk(String clerk_name, double damageChance) {
         Clerk new_clerk = new Clerk(clerk_name, register, this, damageChance);
