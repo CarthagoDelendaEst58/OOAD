@@ -29,6 +29,7 @@ public class Clerk extends Staff {
         ArrayList<Item> inDelivery = getStore().getItemsInDelivery();
         for (int i = inDelivery.size()-1; i >= 0; i--) {
             if (inDelivery.get(i).getDayArrived() == day) {
+                System.out.println(String.format("%s has discovered that a %s has arrived at the store", getName(), inDelivery.get(i).getClassName()));
                 getStore().addItemToInventory(inDelivery.get(i));
                 inDelivery.remove(i);
             }
@@ -81,6 +82,8 @@ public class Clerk extends Staff {
             getStore().addItemToInDelivery(newItem);
             getRegister().alterBalance(-1*newItem.getPurchasePrice());
         }
+
+        System.out.println(String.format("%s has placed an order for 3 %s", getName(), item_type));
     }
 
     private void sellItem(Customer customer, Item item, double price, int item_index) {
