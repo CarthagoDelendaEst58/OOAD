@@ -4,4 +4,7 @@ included.
 
 The main changes in the UML diagram came from additional methods with each class. However, the relationship between objects and generally the classes needed stayed the same. The biggest class addition was a ItemFactory class, that allowed to more conveniently create instances of all of the different subtypes of Item. The FNMS class was also added, to incorporate initalize, simulate and summary, however the presence of such a class isn't surprising. 
 
+Team Members: Gregor Tzinov and Robert Dumitrescu
+Java Version: 16
+
 (NOTE: We emailed Professor Bruce to ask for an extension for this project early of last week, and he said that he could waive the late penalty for us.)
