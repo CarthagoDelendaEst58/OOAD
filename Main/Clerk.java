@@ -19,6 +19,7 @@ public class Clerk extends Staff {
         arriveAtStore(day);
         checkRegister();
         doInventory();
+        openTheStore();
         cleanTheStore();
         leaveTheStore();
     }
@@ -85,6 +86,17 @@ public class Clerk extends Staff {
         getStore().getInventory().remove(item_index);
         getStore().soldItem(item);
         getRegister().alterBalance(price);
+
+        System.out.println(String.format("%s has sold a %s to %s for $f", getName(), item.getClassName(), customer.getName(), price));
+    }
+
+    private void buyItem(Customer customer, Item item, double price) {
+        item.setPurchasePrice(price);
+        getStore().addItemToInventory(item);
+        getRegister().alterBalance(-1*price);
+
+        String newOrUsed = item.getNewOrUsed() ? "new" : "used";
+        System.out.println(String.format("%s has bought a %s condition %s %s from %s for $%f", getName(), item.getCondition(), newOrUsed, item.getClassName(), customer.getName(), price));
     }
 
     private void openTheStore() {
@@ -105,7 +117,25 @@ public class Clerk extends Staff {
         for (int i = 0; i < customers.size(); i++) {
             Customer curr_customer = customers.get(i);
             if (curr_customer.isSeller()) {
+                ItemFactory factory = new ItemFactory();
+                Item newItem = factory.generateItem(curr_customer.getItemType());
 
+                double price = 0;
+                for (int j = 0; j < Store.conditions.length; j++) {
+                    if (newItem.getCondition().equals(Store.conditions[j])) {
+                        price = (j+1) * 10;
+                    }
+                }
+                if (!newItem.getNewOrUsed()) {
+                    price = price/2;
+                }
+
+                if (rand.nextInt(100) < 50) {
+                    buyItem(curr_customer, newItem, price);
+                }
+                else if (rand.nextInt(100) < 75) {
+                    buyItem(curr_customer, newItem, price*1.1);
+                }
             }
             else {
                 boolean item_bought = false;
@@ -116,10 +146,14 @@ public class Clerk extends Staff {
                             sellItem(curr_customer, curr_item, curr_item.getListPrice(), j);
                             item_bought = true;
                         }
-
+                        else if (rand.nextInt(100) < 75) {
+                            sellItem(curr_customer, curr_item, curr_item.getListPrice()*0.9, j);
+                            item_bought = true;
+                        }
+                        break;
                     }
                 }
-                if (item_bought == false) {
+                if (!item_bought) {
                     System.out.println(String.format("%s has left the store without buying anything", curr_customer.getName()));
                 }
             }
