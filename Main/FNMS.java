@@ -26,6 +26,7 @@ public class FNMS {
         for (int i = 0; i < item_types.length;i++ ){
             for (int j = 0; j < 3; j++){
                 Item tempItem = itemFactory.generateItem(item_types[i]);
+                System.out.println(tempItem);
                 FNMS.addItemToInventory(tempItem);
             }
         }
@@ -33,15 +34,13 @@ public class FNMS {
     }
 
     public void simulate(){
-        ArrayList<Item> inventory;
-        inventory = FNMS.getInventory();
-        System.out.println(inventory.size());
-        System.out.println(inventory.get(1).getName());
-        System.out.println(inventory.get(15).getPurchasePrice());
+//        ArrayList<Item> inventory;
+//        inventory = FNMS.getInventory();
+//        System.out.println(inventory.get(1).getName());
+//        System.out.println(inventory.get(15).getPurchasePrice());
 
 
-//        FNMS.getStaff().get(1).work(1);
+        FNMS.getStaff().get(1).work(1);
 
     }
-
 }

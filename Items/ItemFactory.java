@@ -15,10 +15,11 @@ public class ItemFactory {
     public Item createItem(String type, String name, double purchasePrice, double listPrice, boolean newOrUsed, int dayArrived, String condition,
                            String band, String album, boolean isElectric, String fluteType, String harmonicaKey, int hatSize, int shirtSize,
                            double ampWattage, double cableLength, String stringsType){
-        if (type == null || type.isEmpty())
+        if (type == null || type.isEmpty()) {
             return null;
+        }
 
-        if (("Bandana").equals(type)){
+        if (("BandanaItem").equals(type)){
             return new BandanaItem(name, purchasePrice, listPrice, newOrUsed, dayArrived, condition);
         }
 
@@ -54,7 +55,7 @@ public class ItemFactory {
             return new HatItem(name, purchasePrice, listPrice, newOrUsed, dayArrived, condition, hatSize);
         }
 
-        if (("Mandolin").equals(type)){
+        if (("MandolinItem").equals(type)){
             return new MandolinItem(name, purchasePrice, listPrice, newOrUsed, dayArrived, condition, isElectric);
         }
 
@@ -66,7 +67,7 @@ public class ItemFactory {
             return new PaperScoreItem(name, purchasePrice, listPrice, newOrUsed, dayArrived, condition, band, album);
         }
 
-        if (("PracticeAmpType").equals(type)){
+        if (("PracticeAmpItem").equals(type)){
             return new PracticeAmpItem(name, purchasePrice, listPrice, newOrUsed, dayArrived, condition, ampWattage);
         }
 
@@ -85,7 +86,6 @@ public class ItemFactory {
         if (("VinylItem").equals(type)){
             return new VinylItem(name, purchasePrice, listPrice, newOrUsed, dayArrived, condition, band, album);
         }
-
 
         return null;
     }
