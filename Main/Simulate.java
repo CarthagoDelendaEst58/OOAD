@@ -12,11 +12,9 @@ public class Simulate {
 
     public static void main(String[] args) {
         Store store = new Store();
-        store.addClerk("Velma");
-        store.addClerk("Shaggy");
+        store.addClerk("Velma", 5);
+        store.addClerk("Shaggy", 20);
 
-        store.getStaff().get(0).work(1);
-
-        //
+        store.getStaff().get(1).work(1);
     }
 }

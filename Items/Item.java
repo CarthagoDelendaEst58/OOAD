@@ -20,6 +20,11 @@ public abstract class Item {
         this.condition = condition;
     }
 
+    // https://stackoverflow.com/questions/6271417/java-get-the-current-class-name
+    public String getClassName() {
+        return this.getClass().getSimpleName();
+    }
+
     public String getName(){
         return name;
     }
