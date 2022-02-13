@@ -15,32 +15,46 @@ public class FNMS {
             "FluteItem", "HarmonicaItem", "MandolinItem", "GuitarItem", "BassItem"};
 
 
-
     public void initialize() {
+
 
         FNMS = new Store();
         FNMS.addClerk("Velma", 5);
         FNMS.addClerk("Shaggy", 20);
         itemFactory = new ItemFactory();
 
-        for (int i = 0; i < item_types.length;i++ ){
-            for (int j = 0; j < 3; j++){
+        for (int i = 0; i < item_types.length; i++) {
+            for (int j = 0; j < 3; j++) {
                 Item tempItem = itemFactory.generateItem(item_types[i]);
-                System.out.println(tempItem);
                 FNMS.addItemToInventory(tempItem);
             }
         }
 
     }
 
-    public void simulate(){
-//        ArrayList<Item> inventory;
-//        inventory = FNMS.getInventory();
-//        System.out.println(inventory.get(1).getName());
-//        System.out.println(inventory.get(15).getPurchasePrice());
+    public void simulate(int numDays) {
 
+        Random rand = new Random();
+        int numStaff = FNMS.getStaff().size();
 
-        FNMS.getStaff().get(1).work(1);
-
+        for (int i = 0; i < numDays; i++) {
+            outerloop:
+            while (true) {
+                int randomStaffID = rand.nextInt(numStaff);
+                if (FNMS.getStaff().get(randomStaffID).getConsecutiveDays() >= 3){
+                    break;
+                }
+                for (int j = 0; j < numStaff; j++) {
+                        if (j == randomStaffID) {
+                                FNMS.getStaff().get(j).work(i);
+                                FNMS.getStaff().get(j).incrementConsecutiveDays();
+                                break outerloop;
+                        }
+                        else {
+                            FNMS.getStaff().get(j).resetConsecutiveDays();
+                        }
+                }
+            }
+        }
     }
 }
