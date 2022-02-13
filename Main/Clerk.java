@@ -76,7 +76,15 @@ public class Clerk extends Staff {
 
         for (Map.Entry pair : stock.entrySet()) {
             if ((int)pair.getValue() <= 0) {
-                placeAnOrder((String)pair.getKey());
+                boolean item_inDelivery = false;
+                for (Item item : getStore().getItemsInDelivery()) {
+                    if (item.getClassName().equals((String)pair.getKey())) {
+                        item_inDelivery = true;
+                    }
+                }
+                if (!item_inDelivery) {
+                    placeAnOrder((String) pair.getKey());
+                }
             }
         }
     }
@@ -88,7 +96,8 @@ public class Clerk extends Staff {
         for (int i = 0; i < 3; i++) {
             Item newItem = factory.generateItem(item_type);
             newItem.setDayArrived(getStore().getDay()+days_to_delivery);
-            getStore().addItemToInDelivery(newItem);
+            Store store = getStore();
+            store.addItemToInDelivery(newItem);
             getRegister().alterBalance(-1*newItem.getPurchasePrice());
         }
 
