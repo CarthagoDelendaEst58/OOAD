@@ -17,6 +17,7 @@ public class Customer {
         this.name = name;
         this.seller = seller;
         this.itemType = itemType;
+        itemsOwned = new ArrayList<Item>();
     }
 
     public String getName() { return name; }

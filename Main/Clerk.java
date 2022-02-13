@@ -40,6 +40,7 @@ public class Clerk extends Staff {
     }
 
     // The Clerk checks the Register, announcing the balance
+    // Initiates goToBank if the balance is lower than $75
     private void checkRegister() {
         double register_balance = getRegister().getBalance();
         System.out.println(String.format("%s has counted a total of $%f in the register", getName(), register_balance));
