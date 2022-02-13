@@ -5,11 +5,10 @@ class Staff {
     private int consecutiveDays;
 
 
-        private Store store;
+    private Store store;
     private CashRegister register;
 
-
-        Staff(String _name, CashRegister _register, Store _store) {
+    Staff(String _name, CashRegister _register, Store _store) {
         name = _name;
         consecutiveDays = 0;
         register = _register;
