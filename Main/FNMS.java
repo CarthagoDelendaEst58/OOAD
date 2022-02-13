@@ -32,30 +32,53 @@ public class FNMS {
 
     }
 
+    private ArrayList<Clerk> getAvailableClerk() {
+        ArrayList<Clerk> available = new ArrayList<Clerk>();
+        for (Clerk staff : FNMS.getStaff()) {
+            if (staff.getConsecutiveDays() < 3) {
+                available.add(staff);
+            }
+        }
+        return available;
+    }
+
     public void simulate(int numDays) {
 
         Random rand = new Random();
-        int numStaff = FNMS.getStaff().size();
 
-        for (int i = 0; i < numDays; i++) {
-            boolean staffFound = false;
-            while (!staffFound) {
-                int randomStaffID = rand.nextInt(numStaff);
-                if (FNMS.getStaff().get(randomStaffID).getConsecutiveDays() < 3){
-                    staffFound = true;
-                    for (int j = 0; j < numStaff; j++) {
-                        if (j == randomStaffID) {
-                            FNMS.getStaff().get(j).work(i);
-                            FNMS.getStaff().get(j).incrementConsecutiveDays();
-                            break;
-                        }
-                        else {
-                            FNMS.getStaff().get(j).resetConsecutiveDays();
-                        }
-                    }
+        for (int day = 1; day <=30; day++ ) {
+            ArrayList<Clerk> available = getAvailableClerk();
+            Clerk the_chosen_one = available.get(rand.nextInt(available.size()));
+
+            for (Staff staff : FNMS.getStaff()) {
+                if (!staff.getName().equals(the_chosen_one.getName())) {
+                    staff.resetConsecutiveDays();
                 }
-
             }
+            the_chosen_one.work(day);
         }
+
+//        int numStaff = FNMS.getStaff().size();
+//
+//        for (int i = 0; i < numDays; i++) {
+//            boolean staffFound = false;
+//            while (!staffFound) {
+//                int randomStaffID = rand.nextInt(numStaff);
+//                if (FNMS.getStaff().get(randomStaffID).getConsecutiveDays() < 3){
+//                    staffFound = true;
+//                    for (int j = 0; j < numStaff; j++) {
+//                        if (j == randomStaffID) {
+//                            FNMS.getStaff().get(j).work(i);
+//                            FNMS.getStaff().get(j).incrementConsecutiveDays();
+//                            break;
+//                        }
+//                        else {
+//                            FNMS.getStaff().get(j).resetConsecutiveDays();
+//                        }
+//                    }
+//                }
+//
+//            }
+//        }
     }
 }
