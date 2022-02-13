@@ -38,22 +38,23 @@ public class FNMS {
         int numStaff = FNMS.getStaff().size();
 
         for (int i = 0; i < numDays; i++) {
-            outerloop:
-            while (true) {
+            boolean staffFound = false;
+            while (!staffFound) {
                 int randomStaffID = rand.nextInt(numStaff);
-                if (FNMS.getStaff().get(randomStaffID).getConsecutiveDays() >= 3){
-                    break;
-                }
-                for (int j = 0; j < numStaff; j++) {
+                if (FNMS.getStaff().get(randomStaffID).getConsecutiveDays() < 3){
+                    staffFound = true;
+                    for (int j = 0; j < numStaff; j++) {
                         if (j == randomStaffID) {
-                                FNMS.getStaff().get(j).work(i);
-                                FNMS.getStaff().get(j).incrementConsecutiveDays();
-                                break outerloop;
+                            FNMS.getStaff().get(j).work(i);
+                            FNMS.getStaff().get(j).incrementConsecutiveDays();
+                            break;
                         }
                         else {
                             FNMS.getStaff().get(j).resetConsecutiveDays();
                         }
+                    }
                 }
+
             }
         }
     }
