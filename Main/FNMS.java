@@ -48,39 +48,48 @@ public class FNMS {
 
         Random rand = new Random();
 
-        for (int day = 1; day <=numDays; day++ ) {
-            ArrayList<Clerk> available = getAvailableClerk();
-            Clerk the_chosen_one = available.get(rand.nextInt(available.size()));
-
-            for (Staff staff : FNMS.getStaff()) {
-                if (!staff.getName().equals(the_chosen_one.getName())) {
-                    staff.resetConsecutiveDays();
-                }
+        for (int day = 1; day <= numDays; day++) {
+            FNMS.incrementDay();
+            if (day % 7 == 0){
+                System.out.println("No one works on Sundays");
+                continue;
             }
-            the_chosen_one.work(day);
-        }
+            else {
+                ArrayList<Clerk> available = getAvailableClerk();
+                Clerk the_chosen_one = available.get(rand.nextInt(available.size()));
 
-//        int numStaff = FNMS.getStaff().size();
-//
-//        for (int i = 0; i < numDays; i++) {
-//            boolean staffFound = false;
-//            while (!staffFound) {
-//                int randomStaffID = rand.nextInt(numStaff);
-//                if (FNMS.getStaff().get(randomStaffID).getConsecutiveDays() < 3){
-//                    staffFound = true;
-//                    for (int j = 0; j < numStaff; j++) {
-//                        if (j == randomStaffID) {
-//                            FNMS.getStaff().get(j).work(i);
-//                            FNMS.getStaff().get(j).incrementConsecutiveDays();
-//                            break;
-//                        }
-//                        else {
-//                            FNMS.getStaff().get(j).resetConsecutiveDays();
-//                        }
-//                    }
-//                }
-//
-//            }
-//        }
+                for (Staff staff : FNMS.getStaff()) {
+                    if (!staff.getName().equals(the_chosen_one.getName())) {
+                        staff.resetConsecutiveDays();
+                    }
+                }
+                the_chosen_one.work(day);
+            }
+        }
     }
-}
+
+        public void summary(int numDays){
+            System.out.println("Here is a summary of the status at the store at the end of " + numDays +  " days.");
+
+            int numItems = FNMS.getInventory().size();
+            double itemsValue = 0.0;
+            for (int i = 0; i < FNMS.getInventory().size(); i++){
+                itemsValue = itemsValue + FNMS.getInventory().get(i).getListPrice();
+            }
+
+            System.out.println("The number of items sold was " + numItems + ", with value $" + String.format("%.2f",itemsValue ));
+
+            double soldValue = 0.0;
+            System.out.println("Here are the Items that were sold");
+            for (int i = 0; i < FNMS.getSoldItems().size(); i++){
+                Item soldItem = FNMS.getSoldItems().get(i);
+                System.out.println(soldItem.getName() + " was sold on day " + soldItem.getDaySold() + " for total $" + String.format("%.2f",(soldItem.getSalePrice())));
+                soldValue += soldItem.getSalePrice();
+            }
+
+            System.out.println("The total amount sold was $" + String.format("%.2f", soldValue));
+//
+//        System.out.println(value);
+
+    }
+    }

@@ -28,7 +28,6 @@ public class Clerk extends Staff {
     // The Clerk arrives at the store on the given day, announcing their arrival
     // The Clerk also checks the Store's inDelivery ArrayList for any newly delivered items
     private void arriveAtStore(int day) {
-        getStore().incrementDay();
         System.out.println(String.format("%s has arrived at the store on day %d", getName(), getStore().getDay()));
         ArrayList<Item> inDelivery = getStore().getItemsInDelivery();
         for (int i = inDelivery.size()-1; i >= 0; i--) { // looping from the back to avoid issues when removing from the ArrayList
