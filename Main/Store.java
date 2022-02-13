@@ -68,6 +68,7 @@ public class Store {
         int dayArrived = 0;
         String condition = conditions[rand.nextInt(5)];
 
+        // Factory generates Item based on parameters
         Item newItem = itemFactory.createItem(type, name, purchasePrice, listPrice, newOrUsed, dayArrived, condition,
                 "Nirvana", "Nevermind", true, "Wood", "B", 5, 10,
                 100.00, 10.00, "Nylon");

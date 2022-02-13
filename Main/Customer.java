@@ -10,6 +10,7 @@ public class Customer {
     private String itemType;
     private ArrayList<Item> itemsOwned;
 
+    // List of names which can be randomly sampled from
     private static String[] names = {"Liam", "Olivia", "Noah", "Emma", "Oliver",
                               "Ava", "Elijah", "Charlotte", "William", "Sophia"};
 
