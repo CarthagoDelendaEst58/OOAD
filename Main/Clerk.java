@@ -68,7 +68,11 @@ public class Clerk extends Staff {
             total += inventory.get(i).getPurchasePrice();
             stock.put(inventory.get(i).getClassName(), stock.get(inventory.get(i).getClassName())+1);
         }
-        System.out.println(String.format("%s has determined that the total value of items in the store is $%f", getName(), total));
+
+        System.out.println(stock.size());
+//        System.out.println(String.format("%s has determined that the total value of items in the store is $%f", getName(), total));
+
+        System.out.println(stock);
 
         for (Map.Entry pair : stock.entrySet()) {
             if ((int)pair.getValue() <= 0) {

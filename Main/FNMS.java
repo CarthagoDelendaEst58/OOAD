@@ -30,6 +30,8 @@ public class FNMS {
             }
         }
 
+        System.out.println(FNMS.getInventory());
+
     }
 
     private ArrayList<Clerk> getAvailableClerk() {
@@ -46,7 +48,7 @@ public class FNMS {
 
         Random rand = new Random();
 
-        for (int day = 1; day <=30; day++ ) {
+        for (int day = 1; day <=numDays; day++ ) {
             ArrayList<Clerk> available = getAvailableClerk();
             Clerk the_chosen_one = available.get(rand.nextInt(available.size()));
 

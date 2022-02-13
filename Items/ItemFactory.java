@@ -108,7 +108,7 @@ public class ItemFactory {
         int dayArrived = 0;
         String condition =  conditions[rand.nextInt(5)];
 
-        Item newItem = createItem(item_types[rand.nextInt(item_types.length)], itemName, itemPurchasePrice, itemListPrice, newOrUsed, dayArrived, condition,
+        Item newItem = createItem(type, itemName, itemPurchasePrice, itemListPrice, newOrUsed, dayArrived, condition,
                 "Nirvana", "Nevermind", true, "Wood", "B", 5, 10,
                 100.00, 10.00, "Nylon");
         return newItem;
