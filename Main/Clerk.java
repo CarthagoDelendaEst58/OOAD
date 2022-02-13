@@ -173,11 +173,11 @@ public class Clerk extends Staff {
                 for (int j = items.size()-1; j >= 0; j--) {
                     Item curr_item = items.get(j);
                     if (curr_item.getClassName().equals(curr_customer.getItemType())) { // Customer finds Item of type wanting to buy
-                        if (rand.nextInt(100) < 50) {
+                        if (rand.nextInt(100) < 50) { // Customer buys item at list price
                             sellItem(curr_customer, curr_item, curr_item.getListPrice(), j);
                             item_bought = true;
                         }
-                        else if (rand.nextInt(100) < 75) {
+                        else if (rand.nextInt(100) < 75) { // Customer buys item at slight discount
                             sellItem(curr_customer, curr_item, curr_item.getListPrice()*0.9, j);
                             item_bought = true;
                         }
@@ -189,9 +189,10 @@ public class Clerk extends Staff {
                 }
             }
         }
-
     }
 
+    // Returns the index of the first occurrence of the given String in the given String array
+    // Returns -1 if the given String does not exist within the array
     int getPosOfStr(String[] arr, String str) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].equals(str)) {
@@ -201,26 +202,28 @@ public class Clerk extends Staff {
         return -1;
     }
 
+    // The Clerk closes up shop and has a chance to damage each item
+    // If an item with the lowest condition gets damaged, it is destroyed
     private void cleanTheStore() {
         Random rand = new Random();
         ArrayList<Item> inventory = getStore().getInventory();
-        for (int i = inventory.size()-1; i >= 0; i--) {
-            if (rand.nextInt(100) < damageChance) {
+        for (int i = inventory.size()-1; i >= 0; i--) { // Looping from the back to avoid issues with .remove()
+            if (rand.nextInt(100) < damageChance) { // Item is damaged
                 int condition_index = getPosOfStr(Store.conditions, inventory.get(i).getCondition());
-                if (condition_index == 0) {
+                if (condition_index == 0) { // Item will be destroyed
                     System.out.println(String.format("%s has destroyed a(n) %s", getName(), inventory.get(i).getClassName()));
                     inventory.remove(i);
                 }
                 else if (condition_index > 0) {
                     System.out.println(String.format("%s has damaged a(n) %s, lowering its condition to %s", getName(), inventory.get(i).getClassName(), Store.conditions[condition_index-1]));
-                    inventory.get(i).setCondition(Store.conditions[condition_index-1]);
-                    inventory.get(i).setListPrice(inventory.get(i).getListPrice()*0.8);
+                    inventory.get(i).setCondition(Store.conditions[condition_index-1]); // lowering conditions
+                    inventory.get(i).setListPrice(inventory.get(i).getListPrice()*0.8); // lowering listPrice
                 }
-
             }
         }
     }
 
+    // The Clerk announces their leave from the store
     private void leaveTheStore() {
         System.out.println(String.format("%s is leaving the store", getName()));
     }

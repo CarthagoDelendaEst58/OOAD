@@ -31,7 +31,6 @@ public class Store {
         inDelivery = new ArrayList<Item>();
         inventory = new ArrayList<Item>();
         soldItems = new ArrayList<Item>();
-        //functionality for adding preset inventory will be in initalize for main
     }
 
     public ArrayList<Clerk> getStaff() {
@@ -56,6 +55,7 @@ public class Store {
     public ArrayList<Item> getInventory() { return inventory; }
     public void moneyWithdrawn(double money) { moneyWithdrawnFromBank += money; }
 
+    // Generates a new Item based on the given type
     public Item generateItem(String type) {
         Random rand = new Random();
         double itemNumber = rand.nextDouble() * 200 + 1;
