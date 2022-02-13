@@ -1,5 +1,0 @@
-JC = javac
-ARGS = -Xlint
-
-all:
-	$(JC) $(ARGS) CashRegister.java Staff.java Clerk.java Store.java
