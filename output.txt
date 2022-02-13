@@ -1,0 +1,608 @@
+"C:\Program Files\Java\jdk-16.0.2\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.3.1\lib\idea_rt.jar=53652:C:\Program Files\JetBrains\IntelliJ IDEA 2021.3.1\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\gtzin\IdeaProjects\Friendly Neighborhood Music Store\out\production\Friendly Neighborhood Music Store" Main.Main
+Velma has arrived at the store on day 1
+Velma has counted a total of $0.000000 in the register
+Velma has added $1000 to the register
+Velma has determined that the total value of items in the store is $1169.112246
+Velma has sold a VinylItem to Emma for $76.811954
+Velma has sold a HatItem to Oliver for $70.991062
+Velma has sold a RecordPlayerItem to Sophia for $23.217352
+Velma has sold a CablesItem to Oliver for $7.154813
+Velma has bought a very good condition used StringsItem from Elijah for $20.000000
+Velma has bought a poor condition new VinylItem from Charlotte for $11.000000
+Velma has destroyed a(n) BandanaItem
+Velma has destroyed a(n) CDItem
+Velma is leaving the store
+Velma has arrived at the store on day 2
+Velma has counted a total of $1147.175181 in the register
+Velma has determined that the total value of items in the store is $1048.356154
+Velma has sold a RecordPlayerItem to Charlotte for $33.458776
+Velma has sold a PracticeAmpItem to William for $34.025505
+Velma has sold a StringsItem to Olivia for $75.768838
+Velma has sold a RecordPlayerItem to Elijah for $88.654586
+Velma has sold a VinylItem to Charlotte for $2.655556
+Velma has sold a HatItem to William for $3.263759
+Velma has sold a ShirtItem to Charlotte for $28.108098
+Velma has sold a BassItem to Olivia for $38.647656
+Velma has damaged a(n) MandolinItem, lowering its condition to very good
+Velma has damaged a(n) ShirtItem, lowering its condition to poor
+Velma has damaged a(n) CDItem, lowering its condition to poor
+Velma has damaged a(n) VinylItem, lowering its condition to poor
+Velma is leaving the store
+Velma has arrived at the store on day 3
+Velma has counted a total of $1451.757955 in the register
+Velma has determined that the total value of items in the store is $895.461736
+Velma has placed an order for 3 RecordPlayerItem
+Velma has sold a BassItem to Oliver for $70.859681
+Velma has sold a PaperScoreItem to Ava for $85.357504
+Velma has sold a BassItem to William for $47.906627
+Charlotte has left the store without buying anything
+Velma has sold a VinylItem to Liam for $68.732664
+Oliver has left the store without buying anything
+Velma has sold a HatItem to Liam for $13.661295
+Velma has sold a CablesItem to Elijah for $12.706424
+Velma has bought a fair condition new ShirtItem from William for $20.000000
+Velma has bought a fair condition new MP3PlayerItem from Elijah for $20.000000
+Velma has bought a fair condition used VinylItem from Sophia for $11.000000
+Velma has damaged a(n) FluteItem, lowering its condition to poor
+Velma has damaged a(n) CablesItem, lowering its condition to good
+Velma is leaving the store
+Velma has arrived at the store on day 4
+Velma has counted a total of $1599.571434 in the register
+Velma has determined that the total value of items in the store is $786.433029
+Velma has placed an order for 3 HatItem
+Velma has placed an order for 3 BassItem
+Velma has sold a HarmonicaItem to William for $34.894159
+Charlotte has left the store without buying anything
+Velma has sold a FluteItem to Emma for $33.926485
+Velma has sold a CablesItem to Ava for $7.458100
+Velma has sold a HarmonicaItem to Noah for $70.112034
+Emma has left the store without buying anything
+Velma has sold a BandanaItem to Liam for $43.628605
+Velma has bought a poor condition used CDItem from Olivia for $5.000000
+Velma has bought a excellent condition used HarmonicaItem from Emma for $27.500000
+Velma has bought a fair condition used HarmonicaItem from William for $11.000000
+Velma is leaving the store
+Velma has arrived at the store on day 5
+Velma has discovered that a BassItem has arrived at the store
+Velma has discovered that a BassItem has arrived at the store
+Velma has discovered that a BassItem has arrived at the store
+Velma has discovered that a HatItem has arrived at the store
+Velma has discovered that a HatItem has arrived at the store
+Velma has discovered that a HatItem has arrived at the store
+Velma has counted a total of $1646.039797 in the register
+Velma has determined that the total value of items in the store is $827.276991
+Velma has placed an order for 3 CablesItem
+Noah has left the store without buying anything
+Velma has sold a BandanaItem to Elijah for $63.363282
+Velma has sold a GuitarItem to Olivia for $4.511038
+Velma has sold a PracticeAmpItem to Noah for $58.640210
+Velma has sold a MandolinItem to Olivia for $40.783903
+Velma has sold a PracticeAmpItem to Emma for $81.099226
+Ava has left the store without buying anything
+Velma has bought a poor condition new CDItem from Sophia for $10.000000
+Velma has damaged a(n) VinylItem, lowering its condition to poor
+Velma is leaving the store
+Shaggy has arrived at the store on day 6
+Shaggy has discovered that a CablesItem has arrived at the store
+Shaggy has discovered that a CablesItem has arrived at the store
+Shaggy has discovered that a CablesItem has arrived at the store
+Shaggy has discovered that a RecordPlayerItem has arrived at the store
+Shaggy has discovered that a RecordPlayerItem has arrived at the store
+Shaggy has discovered that a RecordPlayerItem has arrived at the store
+Shaggy has counted a total of $1814.358616 in the register
+Shaggy has determined that the total value of items in the store is $870.193422
+Shaggy has placed an order for 3 BandanaItem
+Shaggy has placed an order for 3 PracticeAmpItem
+Shaggy has sold a VinylItem to William for $14.178829
+Liam has left the store without buying anything
+Shaggy has sold a ShirtItem to Noah for $98.448115
+Shaggy has sold a HarmonicaItem to Oliver for $25.456483
+Shaggy has sold a MandolinItem to Sophia for $74.441374
+Shaggy has sold a BassItem to Liam for $65.269620
+Shaggy has sold a CDPlayerItem to William for $81.285424
+Shaggy has sold a StringsItem to Oliver for $88.834318
+Shaggy has damaged a(n) CablesItem, lowering its condition to poor
+Shaggy has destroyed a(n) HatItem
+Shaggy has damaged a(n) BassItem, lowering its condition to fair
+Shaggy has damaged a(n) GuitarItem, lowering its condition to poor
+Shaggy is leaving the store
+No one works on Sundays
+Shaggy has arrived at the store on day 8
+Shaggy has counted a total of $2107.256870 in the register
+Shaggy has determined that the total value of items in the store is $648.125721
+Shaggy has sold a CablesItem to Sophia for $33.039264
+Olivia has left the store without buying anything
+Shaggy has sold a BassItem to Olivia for $15.010599
+Shaggy has sold a RecordPlayerItem to Emma for $59.201166
+Shaggy has sold a ShirtItem to Emma for $36.439338
+Shaggy has bought a very good condition used HarmonicaItem from Oliver for $22.000000
+Shaggy has bought a fair condition new StringsItem from Sophia for $22.000000
+Shaggy has damaged a(n) HatItem, lowering its condition to fair
+Shaggy has destroyed a(n) FluteItem
+Shaggy has destroyed a(n) VinylItem
+Shaggy has destroyed a(n) CDPlayerItem
+Shaggy has damaged a(n) CDPlayerItem, lowering its condition to good
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 9
+Shaggy has discovered that a PracticeAmpItem has arrived at the store
+Shaggy has discovered that a PracticeAmpItem has arrived at the store
+Shaggy has discovered that a PracticeAmpItem has arrived at the store
+Shaggy has counted a total of $2206.947237 in the register
+Shaggy has determined that the total value of items in the store is $621.520658
+Shaggy has placed an order for 3 VinylItem
+Shaggy has sold a PracticeAmpItem to Oliver for $31.350721
+Shaggy has sold a BassItem to Emma for $31.841889
+Shaggy has sold a MP3PlayerItem to Ava for $2.770349
+William has left the store without buying anything
+Oliver has left the store without buying anything
+Oliver has left the store without buying anything
+Sophia has left the store without buying anything
+Shaggy has bought a excellent condition used VinylItem from Olivia for $25.000000
+Shaggy has bought a fair condition used StringsItem from William for $11.000000
+Shaggy has bought a excellent condition new BandanaItem from Elijah for $55.000000
+Shaggy has bought a very good condition used HatItem from Ava for $22.000000
+Shaggy has damaged a(n) PracticeAmpItem, lowering its condition to fair
+Shaggy has damaged a(n) PracticeAmpItem, lowering its condition to poor
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to good
+Shaggy has damaged a(n) CablesItem, lowering its condition to fair
+Shaggy has destroyed a(n) GuitarItem
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to poor
+Shaggy has destroyed a(n) CDItem
+Shaggy has damaged a(n) MP3PlayerItem, lowering its condition to good
+Shaggy has damaged a(n) CDPlayerItem, lowering its condition to fair
+Shaggy is leaving the store
+Velma has arrived at the store on day 10
+Velma has discovered that a VinylItem has arrived at the store
+Velma has discovered that a VinylItem has arrived at the store
+Velma has discovered that a VinylItem has arrived at the store
+Velma has counted a total of $2068.284512 in the register
+Velma has determined that the total value of items in the store is $703.958476
+Velma has placed an order for 3 BassItem
+Velma has sold a MandolinItem to Sophia for $54.339184
+Velma has sold a HatItem to Elijah for $3.009765
+Velma has sold a PaperScoreItem to William for $72.204923
+Velma has sold a CDItem to Oliver for $8.347268
+Velma has sold a CDPlayerItem to Elijah for $2.314707
+Velma has bought a very good condition new StringsItem from Liam for $44.000000
+Velma has bought a excellent condition new HarmonicaItem from William for $55.000000
+Velma is leaving the store
+Shaggy has arrived at the store on day 11
+Shaggy has counted a total of $2027.193865 in the register
+Shaggy has determined that the total value of items in the store is $702.859215
+Shaggy has placed an order for 3 CDPlayerItem
+Shaggy has placed an order for 3 MandolinItem
+Shaggy has sold a GuitarItem to Liam for $24.615723
+Emma has left the store without buying anything
+Shaggy has sold a PracticeAmpItem to Ava for $35.519019
+Shaggy has sold a PaperScoreItem to Emma for $7.155515
+Shaggy has sold a CablesItem to Elijah for $41.720249
+Shaggy has sold a VinylItem to Emma for $72.091627
+Shaggy has bought a excellent condition new BassItem from Olivia for $50.000000
+Shaggy has damaged a(n) VinylItem, lowering its condition to very good
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to fair
+Shaggy has damaged a(n) FluteItem, lowering its condition to fair
+Shaggy has damaged a(n) StringsItem, lowering its condition to good
+Shaggy has damaged a(n) ShirtItem, lowering its condition to poor
+Shaggy has damaged a(n) MP3PlayerItem, lowering its condition to fair
+Shaggy has destroyed a(n) MP3PlayerItem
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 12
+Shaggy has discovered that a CDPlayerItem has arrived at the store
+Shaggy has discovered that a CDPlayerItem has arrived at the store
+Shaggy has discovered that a CDPlayerItem has arrived at the store
+Shaggy has discovered that a BassItem has arrived at the store
+Shaggy has discovered that a BassItem has arrived at the store
+Shaggy has discovered that a BassItem has arrived at the store
+Shaggy has counted a total of $2002.386113 in the register
+Shaggy has determined that the total value of items in the store is $809.601929
+Shaggy has placed an order for 3 PaperScoreItem
+Shaggy has placed an order for 3 GuitarItem
+Noah has left the store without buying anything
+Shaggy has sold a CDItem to Oliver for $53.446067
+Shaggy has sold a HatItem to Noah for $2.446645
+Ava has left the store without buying anything
+Shaggy has sold a RecordPlayerItem to Liam for $86.013849
+Shaggy has bought a fair condition new CDPlayerItem from Noah for $22.000000
+Shaggy has bought a fair condition used VinylItem from Charlotte for $10.000000
+Shaggy has damaged a(n) BassItem, lowering its condition to very good
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to very good
+Shaggy has damaged a(n) VinylItem, lowering its condition to poor
+Shaggy has damaged a(n) VinylItem, lowering its condition to good
+Shaggy has damaged a(n) StringsItem, lowering its condition to poor
+Shaggy has damaged a(n) FluteItem, lowering its condition to poor
+Shaggy has damaged a(n) MP3PlayerItem, lowering its condition to poor
+Shaggy is leaving the store
+Velma has arrived at the store on day 13
+Velma has discovered that a GuitarItem has arrived at the store
+Velma has discovered that a GuitarItem has arrived at the store
+Velma has discovered that a GuitarItem has arrived at the store
+Velma has discovered that a MandolinItem has arrived at the store
+Velma has discovered that a MandolinItem has arrived at the store
+Velma has discovered that a MandolinItem has arrived at the store
+Velma has counted a total of $1935.049327 in the register
+Velma has determined that the total value of items in the store is $957.485085
+Velma has sold a HarmonicaItem to Noah for $55.416287
+Velma has sold a PracticeAmpItem to Sophia for $23.629675
+Velma has sold a FluteItem to Noah for $6.799191
+Velma has sold a RecordPlayerItem to Liam for $49.028510
+William has left the store without buying anything
+Velma has bought a fair condition used HarmonicaItem from Sophia for $10.000000
+Velma has bought a poor condition new GuitarItem from Sophia for $11.000000
+Velma has destroyed a(n) HarmonicaItem
+Velma has damaged a(n) StringsItem, lowering its condition to good
+Velma is leaving the store
+No one works on Sundays
+Shaggy has arrived at the store on day 15
+Shaggy has discovered that a PaperScoreItem has arrived at the store
+Shaggy has discovered that a PaperScoreItem has arrived at the store
+Shaggy has discovered that a PaperScoreItem has arrived at the store
+Shaggy has counted a total of $2048.922990 in the register
+Shaggy has determined that the total value of items in the store is $950.087833
+Shaggy has placed an order for 3 PracticeAmpItem
+Shaggy has placed an order for 3 FluteItem
+Shaggy has placed an order for 3 RecordPlayerItem
+Shaggy has sold a HatItem to William for $20.262763
+Shaggy has sold a CablesItem to Noah for $42.002217
+Shaggy has sold a GuitarItem to Liam for $9.018311
+Liam has left the store without buying anything
+Emma has left the store without buying anything
+Shaggy has bought a good condition used CablesItem from Noah for $15.000000
+Shaggy has bought a poor condition new CDPlayerItem from William for $11.000000
+Shaggy has bought a poor condition used MandolinItem from Oliver for $5.500000
+Shaggy has damaged a(n) PaperScoreItem, lowering its condition to poor
+Shaggy has damaged a(n) PaperScoreItem, lowering its condition to good
+Shaggy has damaged a(n) MandolinItem, lowering its condition to good
+Shaggy has damaged a(n) GuitarItem, lowering its condition to good
+Shaggy has damaged a(n) CDPlayerItem, lowering its condition to poor
+Shaggy has damaged a(n) BassItem, lowering its condition to good
+Shaggy has destroyed a(n) StringsItem
+Shaggy is leaving the store
+Velma has arrived at the store on day 16
+Velma has discovered that a RecordPlayerItem has arrived at the store
+Velma has discovered that a RecordPlayerItem has arrived at the store
+Velma has discovered that a RecordPlayerItem has arrived at the store
+Velma has discovered that a PracticeAmpItem has arrived at the store
+Velma has discovered that a PracticeAmpItem has arrived at the store
+Velma has discovered that a PracticeAmpItem has arrived at the store
+Velma has counted a total of $1841.492418 in the register
+Velma has determined that the total value of items in the store is $1070.884616
+Velma has placed an order for 3 HatItem
+Velma has sold a GuitarItem to Ava for $71.939841
+Velma has sold a RecordPlayerItem to Sophia for $58.595511
+Velma has sold a GuitarItem to Oliver for $77.584205
+Velma has sold a MandolinItem to Sophia for $65.355350
+Velma has sold a CablesItem to Ava for $47.551559
+Ava has left the store without buying anything
+Velma has bought a excellent condition used StringsItem from Sophia for $25.000000
+Velma has bought a poor condition used CDItem from Olivia for $5.000000
+Velma has damaged a(n) PaperScoreItem, lowering its condition to fair
+Velma has damaged a(n) GuitarItem, lowering its condition to fair
+Velma has damaged a(n) VinylItem, lowering its condition to poor
+Velma is leaving the store
+Velma has arrived at the store on day 17
+Velma has discovered that a FluteItem has arrived at the store
+Velma has discovered that a FluteItem has arrived at the store
+Velma has discovered that a FluteItem has arrived at the store
+Velma has counted a total of $2034.222884 in the register
+Velma has determined that the total value of items in the store is $1054.760766
+Velma has placed an order for 3 CablesItem
+Velma has sold a PaperScoreItem to Emma for $2.592926
+Sophia has left the store without buying anything
+Ava has left the store without buying anything
+Velma has sold a VinylItem to Olivia for $21.838710
+Liam has left the store without buying anything
+Velma has bought a fair condition new BassItem from Noah for $20.000000
+Velma has bought a fair condition new FluteItem from Charlotte for $22.000000
+Velma is leaving the store
+Shaggy has arrived at the store on day 18
+Shaggy has discovered that a CablesItem has arrived at the store
+Shaggy has discovered that a CablesItem has arrived at the store
+Shaggy has discovered that a CablesItem has arrived at the store
+Shaggy has counted a total of $1929.947228 in the register
+Shaggy has determined that the total value of items in the store is $1171.847480
+Shaggy has sold a CDItem to Sophia for $2.158689
+Shaggy has sold a BassItem to Ava for $79.978949
+William has left the store without buying anything
+Shaggy has sold a PaperScoreItem to Emma for $56.071465
+Shaggy has sold a GuitarItem to Emma for $22.009965
+Shaggy has sold a CDPlayerItem to Emma for $27.491365
+Shaggy has sold a CDPlayerItem to William for $44.233898
+Shaggy has bought a good condition used HatItem from Elijah for $15.000000
+Shaggy has damaged a(n) HatItem, lowering its condition to fair
+Shaggy has damaged a(n) FluteItem, lowering its condition to poor
+Shaggy has damaged a(n) StringsItem, lowering its condition to very good
+Shaggy has damaged a(n) MandolinItem, lowering its condition to fair
+Shaggy has damaged a(n) BandanaItem, lowering its condition to very good
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to very good
+Shaggy has destroyed a(n) ShirtItem
+Shaggy has destroyed a(n) MP3PlayerItem
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 19
+Shaggy has discovered that a HatItem has arrived at the store
+Shaggy has discovered that a HatItem has arrived at the store
+Shaggy has discovered that a HatItem has arrived at the store
+Shaggy has counted a total of $2146.891559 in the register
+Shaggy has determined that the total value of items in the store is $1122.518688
+Shaggy has placed an order for 3 ShirtItem
+Shaggy has placed an order for 3 GuitarItem
+Shaggy has sold a PaperScoreItem to Elijah for $71.098788
+Shaggy has sold a MandolinItem to Sophia for $19.517333
+Shaggy has sold a MP3PlayerItem to Emma for $5.652243
+Shaggy has sold a RecordPlayerItem to Olivia for $11.031523
+Shaggy has bought a good condition new BassItem from Olivia for $30.000000
+Shaggy has damaged a(n) HatItem, lowering its condition to fair
+Shaggy has damaged a(n) CablesItem, lowering its condition to poor
+Shaggy has damaged a(n) FluteItem, lowering its condition to very good
+Shaggy has damaged a(n) StringsItem, lowering its condition to good
+Shaggy has damaged a(n) PracticeAmpItem, lowering its condition to very good
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to poor
+Shaggy has damaged a(n) VinylItem, lowering its condition to fair
+Shaggy has destroyed a(n) VinylItem
+Shaggy has damaged a(n) BandanaItem, lowering its condition to good
+Shaggy has damaged a(n) StringsItem, lowering its condition to poor
+Shaggy is leaving the store
+Velma has arrived at the store on day 20
+Velma has counted a total of $2085.677757 in the register
+Velma has determined that the total value of items in the store is $1062.359415
+Velma has placed an order for 3 MP3PlayerItem
+Velma has placed an order for 3 PaperScoreItem
+Velma has sold a MandolinItem to Sophia for $33.467568
+Velma has sold a BassItem to Elijah for $81.237821
+Velma has sold a FluteItem to Liam for $66.959461
+Liam has left the store without buying anything
+Velma has bought a excellent condition new MandolinItem from Olivia for $50.000000
+Velma has damaged a(n) HatItem, lowering its condition to poor
+Velma has damaged a(n) VinylItem, lowering its condition to fair
+Velma is leaving the store
+No one works on Sundays
+Shaggy has arrived at the store on day 22
+Shaggy has counted a total of $2144.994349 in the register
+Shaggy has determined that the total value of items in the store is $1041.766322
+Emma has left the store without buying anything
+Shaggy has sold a CDPlayerItem to Liam for $72.946990
+Shaggy has sold a RecordPlayerItem to Olivia for $61.455473
+Oliver has left the store without buying anything
+Emma has left the store without buying anything
+Shaggy has bought a fair condition used CablesItem from Elijah for $11.000000
+Shaggy has bought a poor condition new MandolinItem from Sophia for $10.000000
+Shaggy has damaged a(n) CablesItem, lowering its condition to poor
+Shaggy has damaged a(n) CablesItem, lowering its condition to fair
+Shaggy has destroyed a(n) PracticeAmpItem
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 23
+Shaggy has counted a total of $2258.396811 in the register
+Shaggy has determined that the total value of items in the store is $945.230843
+Shaggy has placed an order for 3 RecordPlayerItem
+William has left the store without buying anything
+Shaggy has sold a FluteItem to William for $92.500922
+Shaggy has sold a VinylItem to William for $32.309401
+Shaggy has sold a StringsItem to Sophia for $46.337829
+Shaggy has sold a CDPlayerItem to Olivia for $28.045302
+Shaggy has sold a PracticeAmpItem to William for $7.578996
+Shaggy has sold a StringsItem to Emma for $87.892347
+Charlotte has left the store without buying anything
+Shaggy has sold a MandolinItem to Liam for $69.805322
+Shaggy has bought a poor condition used CDItem from Charlotte for $5.500000
+Shaggy has bought a very good condition new HatItem from Olivia for $40.000000
+Shaggy has damaged a(n) HatItem, lowering its condition to poor
+Shaggy has damaged a(n) BassItem, lowering its condition to poor
+Shaggy has damaged a(n) BassItem, lowering its condition to fair
+Shaggy has damaged a(n) VinylItem, lowering its condition to poor
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 24
+Shaggy has counted a total of $2487.216613 in the register
+Shaggy has determined that the total value of items in the store is $823.673077
+Shaggy has sold a BandanaItem to Sophia for $55.700291
+Shaggy has sold a CablesItem to Charlotte for $12.973674
+Shaggy has sold a VinylItem to Olivia for $18.772273
+Sophia has left the store without buying anything
+Noah has left the store without buying anything
+Shaggy has bought a poor condition new FluteItem from Noah for $11.000000
+Shaggy has bought a good condition used HatItem from Noah for $15.000000
+Shaggy has bought a excellent condition used BandanaItem from William for $27.500000
+Shaggy has destroyed a(n) FluteItem
+Shaggy has damaged a(n) PracticeAmpItem, lowering its condition to good
+Shaggy has damaged a(n) MandolinItem, lowering its condition to fair
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 25
+Shaggy has counted a total of $2521.162851 in the register
+Shaggy has determined that the total value of items in the store is $775.173077
+Shaggy has placed an order for 3 VinylItem
+Sophia has left the store without buying anything
+Elijah has left the store without buying anything
+Shaggy has sold a StringsItem to Ava for $34.803853
+Sophia has left the store without buying anything
+Shaggy has bought a excellent condition new StringsItem from Noah for $55.000000
+Shaggy has bought a good condition used CDPlayerItem from Sophia for $16.500000
+Shaggy has destroyed a(n) HatItem
+Shaggy has destroyed a(n) CablesItem
+Shaggy has destroyed a(n) FluteItem
+Shaggy has damaged a(n) PracticeAmpItem, lowering its condition to fair
+Shaggy has destroyed a(n) CDPlayerItem
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 26
+Shaggy has discovered that a VinylItem has arrived at the store
+Shaggy has discovered that a VinylItem has arrived at the store
+Shaggy has discovered that a VinylItem has arrived at the store
+Shaggy has discovered that a RecordPlayerItem has arrived at the store
+Shaggy has discovered that a RecordPlayerItem has arrived at the store
+Shaggy has discovered that a RecordPlayerItem has arrived at the store
+Shaggy has counted a total of $2402.269201 in the register
+Shaggy has determined that the total value of items in the store is $909.338880
+Emma has left the store without buying anything
+Liam has left the store without buying anything
+Shaggy has sold a BassItem to William for $11.826467
+Elijah has left the store without buying anything
+Oliver has left the store without buying anything
+Sophia has left the store without buying anything
+Shaggy has sold a RecordPlayerItem to Charlotte for $46.413115
+Shaggy has bought a poor condition used MP3PlayerItem from Sophia for $5.500000
+Shaggy has damaged a(n) RecordPlayerItem, lowering its condition to poor
+Shaggy has damaged a(n) VinylItem, lowering its condition to poor
+Shaggy has damaged a(n) BandanaItem, lowering its condition to very good
+Shaggy has damaged a(n) HatItem, lowering its condition to poor
+Shaggy has destroyed a(n) HatItem
+Shaggy has damaged a(n) FluteItem, lowering its condition to good
+Shaggy has damaged a(n) MandolinItem, lowering its condition to poor
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to poor
+Shaggy is leaving the store
+Shaggy has arrived at the store on day 27
+Shaggy has counted a total of $2455.008784 in the register
+Shaggy has determined that the total value of items in the store is $870.719089
+Shaggy has sold a FluteItem to Liam for $10.767274
+Liam has left the store without buying anything
+Elijah has left the store without buying anything
+Olivia has left the store without buying anything
+Sophia has left the store without buying anything
+Shaggy has bought a very good condition used CDItem from Sophia for $20.000000
+Shaggy has damaged a(n) CDItem, lowering its condition to good
+Shaggy has destroyed a(n) RecordPlayerItem
+Shaggy has destroyed a(n) HarmonicaItem
+Shaggy is leaving the store
+No one works on Sundays
+Shaggy has arrived at the store on day 29
+Shaggy has counted a total of $2445.776058 in the register
+Shaggy has determined that the total value of items in the store is $811.573531
+Shaggy has placed an order for 3 FluteItem
+Charlotte has left the store without buying anything
+Shaggy has sold a HarmonicaItem to Oliver for $4.234143
+Ava has left the store without buying anything
+Shaggy has sold a PracticeAmpItem to Sophia for $43.128669
+Liam has left the store without buying anything
+Shaggy has bought a fair condition new VinylItem from Olivia for $22.000000
+Shaggy has damaged a(n) CablesItem, lowering its condition to fair
+Shaggy has destroyed a(n) BassItem
+Shaggy has damaged a(n) BassItem, lowering its condition to poor
+Shaggy has damaged a(n) HarmonicaItem, lowering its condition to good
+Shaggy has damaged a(n) StringsItem, lowering its condition to fair
+Shaggy is leaving the store
+Velma has arrived at the store on day 30
+Velma has counted a total of $2375.988896 in the register
+Velma has determined that the total value of items in the store is $747.341923
+Velma has placed an order for 3 PracticeAmpItem
+Velma has sold a BassItem to Noah for $93.918504
+Olivia has left the store without buying anything
+Ava has left the store without buying anything
+Velma has sold a VinylItem to Sophia for $76.965664
+Velma has sold a RecordPlayerItem to Emma for $38.289589
+Olivia has left the store without buying anything
+Velma has bought a excellent condition new HatItem from Emma for $55.000000
+Velma has bought a poor condition new MandolinItem from Oliver for $11.000000
+Velma has bought a excellent condition new HatItem from Liam for $50.000000
+Velma has damaged a(n) CablesItem, lowering its condition to poor
+Velma is leaving the store
+Here is a summary of the status at the store at the end of 30 days: 
+
+The number of items in inventory is 25, with value $1303.75
+
+Here are the Items that were sold:
+Item #57 was sold on day 1 for total $76.81
+Item #120 was sold on day 1 for total $70.99
+Item #18 was sold on day 1 for total $23.22
+Item #74 was sold on day 1 for total $7.15
+Item #124 was sold on day 2 for total $33.46
+Item #144 was sold on day 2 for total $34.03
+Item #53 was sold on day 2 for total $75.77
+Item #11 was sold on day 2 for total $88.65
+Item #176 was sold on day 2 for total $2.66
+Item #50 was sold on day 2 for total $3.26
+Item #164 was sold on day 2 for total $28.11
+Item #119 was sold on day 2 for total $38.65
+Item #162 was sold on day 3 for total $70.86
+Item #102 was sold on day 3 for total $85.36
+Item #118 was sold on day 3 for total $47.91
+Item #35 was sold on day 3 for total $68.73
+Item #169 was sold on day 3 for total $13.66
+Item #80 was sold on day 3 for total $12.71
+Item #159 was sold on day 4 for total $34.89
+Item #156 was sold on day 4 for total $33.93
+Item #132 was sold on day 4 for total $7.46
+Item #175 was sold on day 4 for total $70.11
+Item #195 was sold on day 4 for total $43.63
+Item #63 was sold on day 5 for total $63.36
+Item #25 was sold on day 5 for total $4.51
+Item #65 was sold on day 5 for total $58.64
+Item #3 was sold on day 5 for total $40.78
+Item #88 was sold on day 5 for total $81.10
+Item #156 was sold on day 6 for total $14.18
+Item #21 was sold on day 6 for total $98.45
+Item #144 was sold on day 6 for total $25.46
+Item #17 was sold on day 6 for total $74.44
+Item #45 was sold on day 6 for total $65.27
+Item #93 was sold on day 6 for total $81.29
+Item #190 was sold on day 6 for total $88.83
+Item #47 was sold on day 8 for total $33.04
+Item #123 was sold on day 8 for total $15.01
+Item #174 was sold on day 8 for total $59.20
+Item #12 was sold on day 8 for total $36.44
+Item #102 was sold on day 9 for total $31.35
+Item #121 was sold on day 9 for total $31.84
+Item #139 was sold on day 9 for total $2.77
+Item #36 was sold on day 10 for total $54.34
+Item #158 was sold on day 10 for total $3.01
+Item #182 was sold on day 10 for total $72.20
+Item #99 was sold on day 10 for total $8.35
+Item #12 was sold on day 10 for total $2.31
+Item #121 was sold on day 11 for total $24.62
+Item #34 was sold on day 11 for total $35.52
+Item #168 was sold on day 11 for total $7.16
+Item #128 was sold on day 11 for total $41.72
+Item #81 was sold on day 11 for total $72.09
+Item #79 was sold on day 12 for total $53.45
+Item #162 was sold on day 12 for total $2.45
+Item #51 was sold on day 12 for total $86.01
+Item #178 was sold on day 13 for total $55.42
+Item #95 was sold on day 13 for total $23.63
+Item #177 was sold on day 13 for total $6.80
+Item #133 was sold on day 13 for total $49.03
+Item #71 was sold on day 15 for total $20.26
+Item #36 was sold on day 15 for total $42.00
+Item #142 was sold on day 15 for total $9.02
+Item #72 was sold on day 16 for total $71.94
+Item #165 was sold on day 16 for total $58.60
+Item #1 was sold on day 16 for total $77.58
+Item #115 was sold on day 16 for total $65.36
+Item #77 was sold on day 16 for total $47.55
+Item #144 was sold on day 17 for total $2.59
+Item #57 was sold on day 17 for total $21.84
+Item #76 was sold on day 18 for total $2.16
+Item #101 was sold on day 18 for total $79.98
+Item #11 was sold on day 18 for total $56.07
+Item #97 was sold on day 18 for total $22.01
+Item #68 was sold on day 18 for total $27.49
+Item #82 was sold on day 18 for total $44.23
+Item #45 was sold on day 19 for total $71.10
+Item #61 was sold on day 19 for total $19.52
+Item #160 was sold on day 19 for total $5.65
+Item #122 was sold on day 19 for total $11.03
+Item #170 was sold on day 20 for total $33.47
+Item #128 was sold on day 20 for total $81.24
+Item #30 was sold on day 20 for total $66.96
+Item #141 was sold on day 22 for total $72.95
+Item #25 was sold on day 22 for total $61.46
+Item #46 was sold on day 23 for total $92.50
+Item #153 was sold on day 23 for total $32.31
+Item #126 was sold on day 23 for total $46.34
+Item #127 was sold on day 23 for total $28.05
+Item #52 was sold on day 23 for total $7.58
+Item #117 was sold on day 23 for total $87.89
+Item #166 was sold on day 23 for total $69.81
+Item #83 was sold on day 24 for total $55.70
+Item #18 was sold on day 24 for total $12.97
+Item #186 was sold on day 24 for total $18.77
+Item #71 was sold on day 25 for total $34.80
+Item #108 was sold on day 26 for total $11.83
+Item #116 was sold on day 26 for total $46.41
+Item #15 was sold on day 27 for total $10.77
+Item #4 was sold on day 29 for total $4.23
+Item #73 was sold on day 29 for total $43.13
+Item #142 was sold on day 30 for total $93.92
+Item #132 was sold on day 30 for total $76.97
+Item #112 was sold on day 30 for total $38.29
+The total amount sold was $4360.38
+
+The total value in the register is $2382.76
+
+The total money that was added to the register was $1000.00
+
+Process finished with exit code 0
