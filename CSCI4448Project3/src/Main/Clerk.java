@@ -14,6 +14,7 @@ public class Clerk extends Staff {
     public static final int ITEMPURCHASED = 1;
     public static final int ITEMDAMAGED = 2;
     public static final int LEAVE = 3;
+    public static final int ARRIVED = 4;
 
     Clerk(String _name, CashRegister _register, Store _store, double damageChance, TuningStrategy strategy) {
         super(_name, _register, _store);
@@ -27,7 +28,11 @@ public class Clerk extends Staff {
             observers.add(newTracker);
             observerID++;
         }
-//        else if (type.equals(""))
+        else if (type.equals("Logger")) {
+            Logger newLogger = new Logger(observerID);
+            observers.add(newLogger);
+            observerID++;
+        }
 
     }
 
@@ -39,9 +44,18 @@ public class Clerk extends Staff {
         }
     }
 
+    private static int getLoggerID() {
+        for (Observer observer : observers) {
+            if (observer.getClass().getSimpleName() == "Loggger") {
+                return observer.getID();
+            }
+        }
+        return -1;
+    }
+
     private void notifyObservers(int event) {
         for (Observer observer : observers) {
-            observer.update(getName(), event);
+            observer.update(getName(), event, getStore().getDay());
         }
     }
 
@@ -61,7 +75,9 @@ public class Clerk extends Staff {
     // The Clerk arrives at the store on the given day, announcing their arrival
     // The Clerk also checks the Store's inDelivery ArrayList for any newly delivered items
     private void arriveAtStore(int day) {
+        registerObserver("Logger");
         System.out.println(String.format("%s has arrived at the store on day %d", getName(), getStore().getDay()));
+//        notifyObservers(ARRIVED);
         ArrayList<Item> inDelivery = getStore().getItemsInDelivery();
         for (int i = inDelivery.size()-1; i >= 0; i--) { // looping from the back to avoid issues when removing from the ArrayList
             if (inDelivery.get(i).getDayArrived() == day) {
@@ -309,5 +325,10 @@ public class Clerk extends Staff {
     private void leaveTheStore() {
         System.out.println(String.format("%s is leaving the store", getName()));
         notifyObservers(LEAVE);
+
+        int loggerID = getLoggerID();
+        if (loggerID >= 0) {
+            removeObserver(loggerID);
+        }
     }
 }

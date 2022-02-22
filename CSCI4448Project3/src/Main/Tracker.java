@@ -25,7 +25,7 @@ public class Tracker implements Observer{
         clerkData.remove(clerkName);
     }
 
-    public void update(String clerkName, int event) {
+    public void update(String clerkName, int event, int day) {
         if (!clerkData.containsKey(clerkName)) {
             addClerk(clerkName);
         }
