@@ -7,11 +7,42 @@ import Items.*;
 public class Clerk extends Staff {
     private double damageChance;
     private TuningStrategy strategy;
+    private static ArrayList<Observer> observers = new ArrayList<>();
+    private static int observerID = 0;
+
+    public static final int ITEMSOLD = 0;
+    public static final int ITEMPURCHASED = 1;
+    public static final int ITEMDAMAGED = 2;
+    public static final int LEAVE = 3;
 
     Clerk(String _name, CashRegister _register, Store _store, double damageChance, TuningStrategy strategy) {
         super(_name, _register, _store);
         this.damageChance = damageChance;
         this.strategy = strategy;
+    }
+
+    public static void registerObserver(String type) {
+        if (type.equals("Tracker")) {
+            Tracker newTracker = new Tracker(observerID);
+            observers.add(newTracker);
+            observerID++;
+        }
+//        else if (type.equals(""))
+
+    }
+
+    private static void removeObserver(int id) {
+        for (int i = observers.size()-1; i >= 0; i--) {
+            if (observers.get(i).getID() == id) {
+                observers.remove(i);
+            }
+        }
+    }
+
+    private void notifyObservers(int event) {
+        for (Observer observer : observers) {
+            observer.update(getName(), event);
+        }
     }
 
     // Executes the sequence of actions to be performed within one day
@@ -104,7 +135,7 @@ public class Clerk extends Staff {
         }
         ArrayList<Item> inventory = getStore().getInventory();
         double total = 0;
-        for (int i = 0; i < inventory.size(); i++) {
+        for (int i = inventory.size()-1; i >= 0; i--) {
             String classname = inventory.get(i).getClassName();
             tuneItem(inventory.get(i), classname);
 
@@ -156,6 +187,7 @@ public class Clerk extends Staff {
         getRegister().alterBalance(price);
 
         System.out.println(String.format("%s has sold a %s to %s for $%f", getName(), item.getClassName(), customer.getName(), price));
+        notifyObservers(ITEMSOLD);
     }
 
     // Executes the purchase of an Item from the Customer
@@ -166,6 +198,7 @@ public class Clerk extends Staff {
 
         String newOrUsed = item.getNewOrUsed() ? "new" : "used";
         System.out.println(String.format("%s has bought a %s condition %s %s from %s for $%f", getName(), item.getCondition(), newOrUsed, item.getClassName(), customer.getName(), price));
+        notifyObservers(ITEMPURCHASED);
     }
 
     // The Clerk deals with the two types of customers
@@ -245,12 +278,14 @@ public class Clerk extends Staff {
         int condition_index = getPosOfStr(Store.conditions, item.getCondition());
         if (condition_index == 0) { // Item will be destroyed
             System.out.println(String.format("%s has destroyed a(n) %s", getName(), item.getClassName()));
+            notifyObservers(ITEMDAMAGED);
             return 1;
         }
         else if (condition_index > 0) {
             System.out.println(String.format("%s has damaged a(n) %s, lowering its condition to %s", getName(), item.getClassName(), Store.conditions[condition_index-1]));
             item.setCondition(Store.conditions[condition_index-1]); // lowering conditions
             item.setListPrice(item.getListPrice()*0.8); // lowering listPrice
+            notifyObservers(ITEMDAMAGED);
             return 0;
         }
         return -1;
@@ -273,5 +308,6 @@ public class Clerk extends Staff {
     // The Clerk announces their leave from the store
     private void leaveTheStore() {
         System.out.println(String.format("%s is leaving the store", getName()));
+        notifyObservers(LEAVE);
     }
 }

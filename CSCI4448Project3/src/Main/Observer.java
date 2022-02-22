@@ -1,5 +1,6 @@
 package Main;
 
 public interface Observer {
-    public void update(String clerkName, String event);
+    void update(String clerkName, int event);
+    int getID();
 }

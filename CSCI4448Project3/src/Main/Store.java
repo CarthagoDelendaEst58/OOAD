@@ -26,6 +26,8 @@ public class Store {
         staff = new ArrayList<Clerk>();
         day = 0;
 
+        Clerk.registerObserver("Tracker");
+
         moneyWithdrawnFromBank = 0;
 
         inDelivery = new ArrayList<Item>();
