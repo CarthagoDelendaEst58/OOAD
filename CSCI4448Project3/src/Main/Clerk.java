@@ -10,6 +10,8 @@ public class Clerk extends Staff {
     private static ArrayList<Observer> observers = new ArrayList<>();
     private static int observerID = 0;
 
+    enum Event { ITEMSOLD, ITEMPURCHASED, ITEMDAMAGED, LEAVE, ARRIVED, ITEMSARRIVED, REGISTERBALANCE, INVENTORYSIZE, INVENTORYVALUE, ITEMORDERED }
+
     public static final int ITEMSOLD = 0;
     public static final int ITEMPURCHASED = 1;
     public static final int ITEMDAMAGED = 2;
@@ -53,9 +55,9 @@ public class Clerk extends Staff {
         return -1;
     }
 
-    private void notifyObservers(int event) {
+    private void notifyObservers(Event event, double val) {
         for (Observer observer : observers) {
-            observer.update(getName(), event, getStore().getDay());
+            observer.update(getName(), event, getStore().getDay(), val);
         }
     }
 
@@ -77,14 +79,21 @@ public class Clerk extends Staff {
     private void arriveAtStore(int day) {
         registerObserver("Logger");
         System.out.println(String.format("%s has arrived at the store on day %d", getName(), getStore().getDay()));
-//        notifyObservers(ARRIVED);
+        notifyObservers(Event.ARRIVED, 0);
         ArrayList<Item> inDelivery = getStore().getItemsInDelivery();
+
+        int num_items_arrived = 0;
         for (int i = inDelivery.size()-1; i >= 0; i--) { // looping from the back to avoid issues when removing from the ArrayList
             if (inDelivery.get(i).getDayArrived() == day) {
                 System.out.println(String.format("%s has discovered that a %s has arrived at the store", getName(), inDelivery.get(i).getClassName()));
                 getStore().addItemToInventory(inDelivery.get(i));
                 inDelivery.remove(i);
+                num_items_arrived++;
             }
+        }
+
+        if (num_items_arrived > 0) {
+            notifyObservers(Event.ITEMSARRIVED, num_items_arrived);
         }
     }
 
@@ -93,6 +102,7 @@ public class Clerk extends Staff {
     private void checkRegister() {
         double register_balance = getRegister().getBalance();
         System.out.println(String.format("%s has counted a total of $%f in the register", getName(), register_balance));
+        notifyObservers(Event.REGISTERBALANCE, register_balance);
 
         if (register_balance < 75) {
             goToBank();
@@ -105,6 +115,8 @@ public class Clerk extends Staff {
         getRegister().alterBalance(1000);
         getStore().moneyWithdrawn(1000);
         System.out.println(String.format("%s has added $1000 to the register", getName()));
+        double register_balance = getRegister().getBalance();
+        notifyObservers(Event.REGISTERBALANCE, register_balance);
     }
 
     private int tuningOutcome(Item item, boolean before, boolean after) {
@@ -151,16 +163,27 @@ public class Clerk extends Staff {
         }
         ArrayList<Item> inventory = getStore().getInventory();
         double total = 0;
+        int num_items_damaged = 0;
         for (int i = inventory.size()-1; i >= 0; i--) {
             String classname = inventory.get(i).getClassName();
-            tuneItem(inventory.get(i), classname);
+            int tuning_result = tuneItem(inventory.get(i), classname);
 
-            total += inventory.get(i).getPurchasePrice();
-            stock.put(classname, stock.get(classname)+1);
+            if (tuning_result != 1) {
+                total += inventory.get(i).getPurchasePrice();
+                stock.put(classname, stock.get(classname)+1);
+            }
+
+            if (tuning_result != -2 && tuning_result != 2) {
+                num_items_damaged++;
+            }
         }
 
         System.out.println(String.format("%s has determined that the total value of items in the store is $%f", getName(), total));
+        notifyObservers(Event.INVENTORYSIZE, inventory.size());
+        notifyObservers(Event.INVENTORYVALUE, total);
+        notifyObservers(Event.ITEMDAMAGED, num_items_damaged);
 
+        int num_items_ordered = 0;
         for (Map.Entry pair : stock.entrySet()) {
             if ((int)pair.getValue() <= 0) { // No items of this type in stock
                 boolean item_inDelivery = false;
@@ -171,9 +194,11 @@ public class Clerk extends Staff {
                 }
                 if (!item_inDelivery) { // Only order new items if they haven't been ordered yet
                     placeAnOrder((String) pair.getKey());
+                    num_items_ordered += 3;
                 }
             }
         }
+        notifyObservers(Event.ITEMORDERED, num_items_ordered);
     }
 
     // Orders 3 new items of the given item type
@@ -203,7 +228,7 @@ public class Clerk extends Staff {
         getRegister().alterBalance(price);
 
         System.out.println(String.format("%s has sold a %s to %s for $%f", getName(), item.getClassName(), customer.getName(), price));
-        notifyObservers(ITEMSOLD);
+//        notifyObservers(Event.ITEMSOLD, 1);
     }
 
     // Executes the purchase of an Item from the Customer
@@ -214,7 +239,7 @@ public class Clerk extends Staff {
 
         String newOrUsed = item.getNewOrUsed() ? "new" : "used";
         System.out.println(String.format("%s has bought a %s condition %s %s from %s for $%f", getName(), item.getCondition(), newOrUsed, item.getClassName(), customer.getName(), price));
-        notifyObservers(ITEMPURCHASED);
+//        notifyObservers(Event.ITEMPURCHASED, 1);
     }
 
     // The Clerk deals with the two types of customers
@@ -233,6 +258,8 @@ public class Clerk extends Staff {
             customers.add(new_customer);
         }
 
+        int num_items_bought = 0;
+        int num_items_sold = 0;
         for (int i = 0; i < customers.size(); i++) {
             Customer curr_customer = customers.get(i);
             if (curr_customer.isSeller()) {
@@ -251,9 +278,11 @@ public class Clerk extends Staff {
 
                 if (rand.nextInt(100) < 50) { // Item bought at full price
                     buyItem(curr_customer, newItem, price);
+                    num_items_bought++;
                 }
                 else if (rand.nextInt(100) < 75) { // Item bought at slight markup
                     buyItem(curr_customer, newItem, price*1.1);
+                    num_items_bought++;
                 }
             }
             else {
@@ -264,10 +293,12 @@ public class Clerk extends Staff {
                         if (rand.nextInt(100) < 50) { // Customer buys item at list price
                             sellItem(curr_customer, curr_item, curr_item.getListPrice(), j);
                             item_bought = true;
+                            num_items_sold++;
                         }
                         else if (rand.nextInt(100) < 75) { // Customer buys item at slight discount
                             sellItem(curr_customer, curr_item, curr_item.getListPrice()*0.9, j);
                             item_bought = true;
+                            num_items_sold++;
                         }
                         break;
                     }
@@ -277,6 +308,8 @@ public class Clerk extends Staff {
                 }
             }
         }
+        notifyObservers(Event.ITEMPURCHASED, num_items_bought);
+        notifyObservers(Event.ITEMSOLD, num_items_sold);
     }
 
     // Returns the index of the first occurrence of the given String in the given String array
@@ -294,14 +327,14 @@ public class Clerk extends Staff {
         int condition_index = getPosOfStr(Store.conditions, item.getCondition());
         if (condition_index == 0) { // Item will be destroyed
             System.out.println(String.format("%s has destroyed a(n) %s", getName(), item.getClassName()));
-            notifyObservers(ITEMDAMAGED);
+//            notifyObservers(Event.ITEMDAMAGED, 1);
             return 1;
         }
         else if (condition_index > 0) {
             System.out.println(String.format("%s has damaged a(n) %s, lowering its condition to %s", getName(), item.getClassName(), Store.conditions[condition_index-1]));
             item.setCondition(Store.conditions[condition_index-1]); // lowering conditions
             item.setListPrice(item.getListPrice()*0.8); // lowering listPrice
-            notifyObservers(ITEMDAMAGED);
+//            notifyObservers(Event.ITEMDAMAGED, 1);
             return 0;
         }
         return -1;
@@ -312,19 +345,22 @@ public class Clerk extends Staff {
     private void cleanTheStore() {
         Random rand = new Random();
         ArrayList<Item> inventory = getStore().getInventory();
+        int num_items_damaged = 0;
         for (int i = inventory.size()-1; i >= 0; i--) { // Looping from the back to avoid issues with .remove()
             if (rand.nextInt(100) < damageChance) { // Item is damaged
+                num_items_damaged++;
                 if (damageItem(inventory.get(i)) == 1) {
                     inventory.remove(i);
                 }
             }
         }
+        notifyObservers(Event.ITEMDAMAGED, num_items_damaged);
     }
 
     // The Clerk announces their leave from the store
     private void leaveTheStore() {
         System.out.println(String.format("%s is leaving the store", getName()));
-        notifyObservers(LEAVE);
+        notifyObservers(Event.LEAVE, 0);
 
         int loggerID = getLoggerID();
         if (loggerID >= 0) {
