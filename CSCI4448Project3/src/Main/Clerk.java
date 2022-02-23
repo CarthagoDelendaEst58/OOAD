@@ -242,6 +242,19 @@ public class Clerk extends Staff {
 //        notifyObservers(Event.ITEMPURCHASED, 1);
     }
 
+    // This function was taken from the top rated answer of this StackOverflow post: https://stackoverflow.com/questions/9832919/generate-poisson-arrival-in-java
+    private static int getPoissonRandom(double mean) {
+        Random r = new Random();
+        double L = Math.exp(-mean);
+        int k = 0;
+        double p = 1.0;
+        do {
+            p = p * r.nextDouble();
+            k++;
+        } while (p > L);
+        return k - 1;
+    }
+
     // The Clerk deals with the two types of customers
     private void openTheStore() {
         ArrayList<Customer> customers = new ArrayList<Customer>();
@@ -249,7 +262,7 @@ public class Clerk extends Staff {
         String[] names = Customer.getNames();
         String[] item_types = Store.item_types;
         ArrayList<Item> items = getStore().getInventory();
-        for (int i = 0; i < rand.nextInt(7)+4; i++) { // generate buying customers
+        for (int i = 0; i < getPoissonRandom(3)+4; i++) { // generate buying customers
             Customer new_customer = new Customer(names[rand.nextInt(names.length)], false, item_types[rand.nextInt(item_types.length)]);
             customers.add(new_customer);
         }
