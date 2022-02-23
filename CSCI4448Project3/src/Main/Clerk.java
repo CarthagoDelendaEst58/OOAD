@@ -192,7 +192,7 @@ public class Clerk extends Staff {
                         item_inDelivery = true;
                     }
                 }
-                if (!item_inDelivery) { // Only order new items if they haven't been ordered yet
+                if (!item_inDelivery && !Item.isStringed((String)pair.getKey())) { // Only order new items if they haven't been ordered yet
                     placeAnOrder((String) pair.getKey());
                     num_items_ordered += 3;
                 }
@@ -266,23 +266,24 @@ public class Clerk extends Staff {
                 ItemFactory factory = new ItemFactory();
                 Item newItem = factory.generateItem(curr_customer.getItemType()); // generate item being offered
 
-                double price = 0;
-                for (int j = 0; j < Store.conditions.length; j++) {
-                    if (newItem.getCondition().equals(Store.conditions[j])) { // determine base price dependant on item condition
-                        price = (j+1) * 10;
+                if (!Item.isClothing(newItem.getClassName())) {
+                    double price = 0;
+                    for (int j = 0; j < Store.conditions.length; j++) {
+                        if (newItem.getCondition().equals(Store.conditions[j])) { // determine base price dependant on item condition
+                            price = (j + 1) * 10;
+                        }
                     }
-                }
-                if (!newItem.getNewOrUsed()) { // halve price for used items
-                    price = price/2;
-                }
+                    if (!newItem.getNewOrUsed()) { // halve price for used items
+                        price = price / 2;
+                    }
 
-                if (rand.nextInt(100) < 50) { // Item bought at full price
-                    buyItem(curr_customer, newItem, price);
-                    num_items_bought++;
-                }
-                else if (rand.nextInt(100) < 75) { // Item bought at slight markup
-                    buyItem(curr_customer, newItem, price*1.1);
-                    num_items_bought++;
+                    if (rand.nextInt(100) < 50) { // Item bought at full price
+                        buyItem(curr_customer, newItem, price);
+                        num_items_bought++;
+                    } else if (rand.nextInt(100) < 75) { // Item bought at slight markup
+                        buyItem(curr_customer, newItem, price * 1.1);
+                        num_items_bought++;
+                    }
                 }
             }
             else {
