@@ -1,10 +1,10 @@
 Daphne has arrived at the store
-The register has a balance of $1246.95
-Daphne has determined that there are 43 items in the store
-Daphne has determined that the store's inventory is valued at $1243.39
+The register has a balance of $1267.00
+Daphne has determined that there are 47 items in the store
+Daphne has determined that the store's inventory is valued at $1277.41
 Daphne has damaged 0 items
 Daphne has ordered 0 items
-Daphne has purchased 0 items
-Daphne has sold 4 items
-Daphne has damaged 5 items
+Daphne has purchased 3 items
+Daphne has sold 5 items
+Daphne has damaged 1 items
 Daphne is leaving the store

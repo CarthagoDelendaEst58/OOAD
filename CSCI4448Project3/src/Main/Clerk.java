@@ -298,6 +298,7 @@ public class Clerk extends Staff {
                         price = price / 2;
                     }
 
+
                     if (rand.nextInt(100) < 50) { // Item bought at full price
                         buyItem(curr_customer, newItem, price);
                         num_items_bought++;
@@ -312,12 +313,23 @@ public class Clerk extends Staff {
                 for (int j = items.size()-1; j >= 0; j--) {
                     Item curr_item = items.get(j);
                     if (curr_item.getClassName().equals(curr_customer.getItemType())) { // Customer finds Item of type wanting to buy
-                        if (rand.nextInt(100) < 50) { // Customer buys item at list price
+
+                        double sale_chance_factor = 1;
+                        if (Item.isPlayer(curr_item.getClassName()) && curr_item.getEqualized()) {
+                            sale_chance_factor += 0.1;
+                        }
+                        if (Item.isStringed(curr_item.getClassName()) && curr_item.getTuned()) {
+                            sale_chance_factor += 0.15;
+                        }
+                        if (Item.isWind(curr_item.getClassName()) && curr_item.getAdjusted()) {
+                            sale_chance_factor += 0.2;
+                        }
+                        if (rand.nextInt(100) < 50*sale_chance_factor) { // Customer buys item at list price
                             sellItem(curr_customer, curr_item, curr_item.getListPrice(), j);
                             item_bought = true;
                             num_items_sold++;
                         }
-                        else if (rand.nextInt(100) < 75) { // Customer buys item at slight discount
+                        else if (rand.nextInt(100) < 75*sale_chance_factor) { // Customer buys item at slight discount
                             sellItem(curr_customer, curr_item, curr_item.getListPrice()*0.9, j);
                             item_bought = true;
                             num_items_sold++;

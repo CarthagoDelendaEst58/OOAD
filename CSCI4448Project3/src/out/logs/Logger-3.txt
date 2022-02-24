@@ -1,10 +1,10 @@
-Velma has arrived at the store
-The register has a balance of $1485.00
-Velma has determined that there are 39 items in the store
-Velma has determined that the store's inventory is valued at $1112.60
-Velma has damaged 0 items
-Velma has ordered 0 items
-Velma has purchased 1 items
-Velma has sold 7 items
-Velma has damaged 3 items
-Velma is leaving the store
+Daphne has arrived at the store
+The register has a balance of $1618.01
+Daphne has determined that there are 45 items in the store
+Daphne has determined that the store's inventory is valued at $1137.05
+Daphne has damaged 0 items
+Daphne has ordered 3 items
+Daphne has purchased 1 items
+Daphne has sold 7 items
+Daphne has damaged 8 items
+Daphne is leaving the store
