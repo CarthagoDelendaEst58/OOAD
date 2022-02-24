@@ -120,7 +120,7 @@ public abstract class Item {
     }
 
     public static boolean isClothing(String type) {
-        if (Arrays.asList(players).contains(type)) {
+        if (Arrays.asList(clothing).contains(type)) {
             return true;
         }
         return false;
