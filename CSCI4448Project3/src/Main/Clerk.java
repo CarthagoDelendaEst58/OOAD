@@ -162,6 +162,11 @@ public class Clerk extends Staff {
         System.out.println(String.format("%s has determined that the total value of items in the store is $%f", getName(), total));
 
         for (Map.Entry pair : stock.entrySet()) {
+
+
+
+            //if (pair.getKey() == <any subclass of clothing>)
+                //continue
             if ((int)pair.getValue() <= 0) { // No items of this type in stock
                 boolean item_inDelivery = false;
                 for (Item item : getStore().getItemsInDelivery()) {
@@ -224,6 +229,9 @@ public class Clerk extends Staff {
         String[] names = Customer.getNames();
         String[] item_types = Store.item_types;
         ArrayList<Item> items = getStore().getInventory();
+
+        //compute number of buying customers to Poisson RV realization
+
         for (int i = 0; i < rand.nextInt(7)+4; i++) { // generate buying customers
             Customer new_customer = new Customer(names[rand.nextInt(names.length)], false, item_types[rand.nextInt(item_types.length)]);
             customers.add(new_customer);

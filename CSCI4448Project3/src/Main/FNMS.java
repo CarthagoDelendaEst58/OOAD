@@ -23,6 +23,7 @@ public class FNMS {
         FNMS = new Store();
         FNMS.addClerk("Velma", 5, manual);
         FNMS.addClerk("Shaggy", 20, haphazard);
+        //FNMS.addClerk("Daphne". 10)
         itemFactory = new ItemFactory();
 
         for (int i = 0; i < item_types.length; i++) {
@@ -40,6 +41,8 @@ public class FNMS {
         ArrayList<Clerk> available = new ArrayList<Clerk>();
         for (Clerk staff : FNMS.getStaff()) {
             if (staff.getConsecutiveDays() < 3) {
+                //generate random number from 0-10, if number < 1, continue;
+                //report using observer that Clerk is sick
                 available.add(staff);
             }
         }
