@@ -16,9 +16,10 @@ public abstract class Item {
     private boolean tuned;
     private boolean equalized;
 
-    private static String[] stringed = {"MandolinItem", "BassItem", "GuitarItem"};
-    private static String[] wind = {"SaxophoneItem", "FluteItem", "HarmonicaItem"};
-    private static String[] players = {"CDPlayerItem", "RecordPlayerItem", "MP3PlayerItem", "CassettePlayerItem"};
+    private static final String[] stringed = {"MandolinItem", "BassItem", "GuitarItem"};
+    private static final String[] wind = {"SaxophoneItem", "FluteItem", "HarmonicaItem"};
+    private static final String[] players = {"CDPlayerItem", "RecordPlayerItem", "MP3PlayerItem", "CassettePlayerItem"};
+    private static final String[] clothing = {"HatItem", "BandanaItem", "ShirtItem"};
 
     public Item(String name, double purchasePrice, double listPrice, boolean newOrUsed, int dayArrived, String condition) {
         this.name = name;
@@ -113,6 +114,13 @@ public abstract class Item {
 
     public static boolean isPlayer(String type) {
         if (Arrays.asList(players).contains(type)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isClothing(String type) {
+        if (Arrays.asList(clothing).contains(type)) {
             return true;
         }
         return false;

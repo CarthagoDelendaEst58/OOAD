@@ -1,6 +1,8 @@
 package Main;
 
+import Main.Clerk.Event;
+
 public interface Observer {
-    void update(String clerkName, int event, int day);
+    void update(String clerkName, Event event, int day, double val);
     int getID();
 }

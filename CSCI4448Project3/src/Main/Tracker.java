@@ -1,6 +1,7 @@
 package Main;
 
 import java.util.*;
+import Main.Clerk.Event;
 
 public class Tracker implements Observer{
     private HashMap<String, HashMap<String, Integer>> clerkData;
@@ -25,24 +26,24 @@ public class Tracker implements Observer{
         clerkData.remove(clerkName);
     }
 
-    public void update(String clerkName, int event, int day) {
+    public void update(String clerkName, Event event, int day, double val) {
         if (!clerkData.containsKey(clerkName)) {
             addClerk(clerkName);
         }
 
-        if (event == Clerk.ITEMSOLD) {
+        if (event == Event.ITEMSOLD) {
             HashMap<String, Integer> data = clerkData.get(clerkName);
-            data.put("ItemsSold", data.get("ItemsSold")+1);
+            data.put("ItemsSold", data.get("ItemsSold")+(int)val);
         }
-        else if (event == Clerk.ITEMPURCHASED) {
+        else if (event == Event.ITEMPURCHASED) {
             HashMap<String, Integer> data = clerkData.get(clerkName);
-            data.put("ItemsPurchased", data.get("ItemsPurchased")+1);
+            data.put("ItemsPurchased", data.get("ItemsPurchased")+(int)val);
         }
-        else if (event == Clerk.ITEMDAMAGED) {
+        else if (event == Event.ITEMDAMAGED) {
             HashMap<String, Integer> data = clerkData.get(clerkName);
-            data.put("ItemsDamaged", data.get("ItemsDamaged")+1);
+            data.put("ItemsDamaged", data.get("ItemsDamaged")+(int)val);
         }
-        else if (event == Clerk.LEAVE) {
+        else if (event == Event.LEAVE) {
             printSummary();
         }
     }
