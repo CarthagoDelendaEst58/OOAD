@@ -267,14 +267,10 @@ public class Clerk extends Staff {
         String[] names = Customer.getNames();
         String[] item_types = Store.item_types;
         ArrayList<Item> items = getStore().getInventory();
-<<<<<<< HEAD
 
         //compute number of buying customers to Poisson RV realization
 
-        for (int i = 0; i < rand.nextInt(7)+4; i++) { // generate buying customers
-=======
         for (int i = 0; i < getPoissonRandom(3)+4; i++) { // generate buying customers
->>>>>>> 3f7ae38666d499675372eb7ace935bcd58ad9f6a
             Customer new_customer = new Customer(names[rand.nextInt(names.length)], false, item_types[rand.nextInt(item_types.length)]);
             customers.add(new_customer);
         }

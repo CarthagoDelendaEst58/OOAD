@@ -1,0 +1,10 @@
+Velma has arrived at the store
+The register has a balance of $1485.00
+Velma has determined that there are 39 items in the store
+Velma has determined that the store's inventory is valued at $1112.60
+Velma has damaged 0 items
+Velma has ordered 0 items
+Velma has purchased 1 items
+Velma has sold 7 items
+Velma has damaged 3 items
+Velma is leaving the store

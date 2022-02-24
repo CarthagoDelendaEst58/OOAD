@@ -23,7 +23,7 @@ public class FNMS {
         FNMS = new Store();
         FNMS.addClerk("Velma", 5, manual);
         FNMS.addClerk("Shaggy", 20, haphazard);
-        //FNMS.addClerk("Daphne". 10)
+        FNMS.addClerk("Daphne", 10, electronic);
         itemFactory = new ItemFactory();
 
         for (int i = 0; i < item_types.length; i++) {
@@ -39,10 +39,15 @@ public class FNMS {
 
     private ArrayList<Clerk> getAvailableClerk() {
         ArrayList<Clerk> available = new ArrayList<Clerk>();
+        Random rand = new Random();
         for (Clerk staff : FNMS.getStaff()) {
             if (staff.getConsecutiveDays() < 3) {
-                //generate random number from 0-10, if number < 1, continue;
-                //report using observer that Clerk is sick
+                int randomNum = rand.nextInt(10);
+                    if (randomNum < 1){
+                        System.out.println(staff.getName() + " is sick today, and is unable to work today.");
+                        staff.resetConsecutiveDays();
+                        continue;
+                    }
                 available.add(staff);
             }
         }
@@ -61,6 +66,10 @@ public class FNMS {
             }
             else {
                 ArrayList<Clerk> available = getAvailableClerk();
+                if (available.isEmpty()){
+                    System.out.println("Unfortunately no one is able to work at FNMS today and therefore the store will be closed today.");
+                    continue;
+                }
                 Clerk the_chosen_one = available.get(rand.nextInt(available.size()));
 
                 for (Staff staff : FNMS.getStaff()) {
@@ -82,7 +91,7 @@ public class FNMS {
                 itemsValue = itemsValue + FNMS.getInventory().get(i).getListPrice();
             }
 
-            System.out.println("The number of items sold was " + numItems + ", with value $" + String.format("%.2f",itemsValue ));
+            System.out.println("The number of items in inventory is " + numItems + ", with value $" + String.format("%.2f",itemsValue ));
 
             double soldValue = 0.0;
             System.out.println("Here are the Items that were sold");
