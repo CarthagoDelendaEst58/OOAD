@@ -15,7 +15,7 @@ class ClerkTest {
     @Test
     void sellItem() {
         Item newItem = factory.generateItem("BassItem");
-        Customer customer = new Customer("somebody", false, "BassItem");
+        Customer customer = new Customer("somebody", false, "BassItem", false);
         store.addItemToInventory(newItem);
 
         int index = store.getInventory().size()-1;
