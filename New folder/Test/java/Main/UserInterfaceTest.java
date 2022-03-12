@@ -19,13 +19,8 @@ class UserInterfaceTest {
     private static FNMS fnms = new FNMS();
 
     private static void setup() {
-//        store1.addClerk("someone", 0.1, manual);
-//        store1.setActiveClerk(store1.getStaff().get(0));
-//        store2.addClerk("someoneelse", 0.2, haphazard);
-//        store2.setActiveClerk(store2.getStaff().get(0));
         fnms.initialize();
         for (Store store : FNMS.getStores()) {
-//            store.setActiveClerk(store.getStaff().get(0));
             fnms.getAvailableClerk(store);
         }
     }
